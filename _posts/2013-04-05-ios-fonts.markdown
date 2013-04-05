@@ -12,6 +12,3 @@ published: true
 但如果要使用系统中的其他字体时，该怎么做呢？  
 其实[iOSFonts](http://iosfonts.com/)这个网站列出了iOS下所有可用的字体。  
 只要找到你喜欢的字体，使用以下代码就可以了：<pre>UIFont *font = [UIFont fontWithName:@"Georgia" size:13.0f];</pre> 
-
-Please let me know if you have any questions or feedback. My email is [suchuanyi@126.com](mailto:suchuanyi@126.com) and I can also be reached on Sina Weibo at [@四眼蒙面侠](http://weibo.com/suchuanyi).
-
