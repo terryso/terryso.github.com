@@ -13,11 +13,14 @@ published: true
 
 直接安装：[http://firapp.duapp.com/eup](http://firapp.duapp.com/eup)
 
-快盘下载（IPA）：[http://www.kuaipan.cn/file/id_115663804288729098.htm](http://www.kuaipan.cn/file/id_115663804288729098.htm)
+快盘下载：[http://www.kuaipan.cn/file/id_115663804288729099.htm](http://www.kuaipan.cn/file/id_115663804288729099.htm)
 
 **版本更新：**  
 
-最新版 1.04，更新内容  
+最新版1.05，更新内容  
+1. 增加图片保存到相册的功能 
+
+1.04，更新内容  
 1. 增加最热晒图  
 2. 增加点赞、评论功能
 
