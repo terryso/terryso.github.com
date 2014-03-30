@@ -13,7 +13,7 @@ published: true
 
 直接安装：[http://firapp.duapp.com/eup](http://firapp.duapp.com/eup)
 
-快盘下载：[http://www.kuaipan.cn/file/id_115663804288729099.htm](http://www.kuaipan.cn/file/id_115663804288729099.htm)
+快盘下载：[http://www.kuaipan.cn/](http://www.kuaipan.cn/file/id_115663804288729099.htm)
 
 **版本更新：**  
 
