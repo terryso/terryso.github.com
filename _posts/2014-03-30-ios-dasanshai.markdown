@@ -37,6 +37,13 @@ published: true
 3. 增加分享功能  
   
 **截图：**  
+
 ![image](http://app.wapx.cn/appfile//864c09b8d7bee838aaa0300088b692fa/image1.png?03221943097166108075)  
+
+
+
 ![image](http://app.wapx.cn/appfile//864c09b8d7bee838aaa0300088b692fa/image2.png?03221942598079208497)
+
+
+
 ![image](http://images.feng.com/data/attachment/forum/201403/22/235319at5fe8fktffrs5wx.jpg)
