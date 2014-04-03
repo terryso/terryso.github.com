@@ -8,13 +8,13 @@ function openCydia() {
     window.setTimeout(function() {
       var timeOutDateTime = new Date();
       if (timeOutDateTime - loadDateTime < 5000) {
-        window.location = "cydia://home";
+        window.location = "http://emoticon.qiune.com";
       } else {
         window.close();
       }
     },
     25);
-    //window.location = " apps custom url schemes ";
+    window.location = "cydia://home";
   }
 }
 </script>
