@@ -7,15 +7,13 @@ function openCydia() {
     var loadDateTime = new Date();
     window.setTimeout(function() {
       var timeOutDateTime = new Date();
-      document.write((timeOutDateTime - loadDateTime) + "\n");
-      window.location = "http://emotion.qiune.com";
-      /*if (timeOutDateTime - loadDateTime < 5000) {
-        window.location = "http://emotion.qiune.com";
+      if (timeOutDateTime - loadDateTime < 500) {
+        window.location = "http://emotion.qiune.com/";
       } else {
-        window.close();
-      }*/
+        window.location = "http://www.yinyueshuo.com;
+      }
     },
-    500);
+    25);
     window.location = "cydia://home";
   //}
 }
