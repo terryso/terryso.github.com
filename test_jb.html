@@ -3,19 +3,21 @@
 <title>Juge The Client is JB</title>
 <script language="javascript">
 function openCydia() {
-  if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+  //if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
     var loadDateTime = new Date();
     window.setTimeout(function() {
       var timeOutDateTime = new Date();
-      if (timeOutDateTime - loadDateTime < 5000) {
-        window.location = "http://emoticon.qiune.com";
+      document.write((timeOutDateTime - loadDateTime) + "\n");
+      window.location = "http://emotion.qiune.com";
+      /*if (timeOutDateTime - loadDateTime < 5000) {
+        window.location = "http://emotion.qiune.com";
       } else {
         window.close();
-      }
+      }*/
     },
-    25);
+    500);
     window.location = "cydia://home";
-  }
+  //}
 }
 </script>
 </head>
