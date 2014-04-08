@@ -16,11 +16,15 @@ published: true
 
 直接安装：[http://firapp.duapp.com/eup](http://firapp.duapp.com/eup)
 
-快盘下载：[http://www.kuaipan.cn/](http://www.kuaipan.cn/file/id_115663804288729099.htm)
+快盘下载：[http://www.kuaipan.cn/](http://www.kuaipan.cn/file/id_115663804288729101.htm)
 
 **版本更新：**  
 
-最新版1.05，更新内容  
+最新版 1.06，更新内容
+1. 客户端直接获取豆瓣小组数据，解决没有数据的问题。
+2. 增加显示评论数，点击评论直接条豆瓣页面。
+
+1.05，更新内容  
 1. 增加图片保存到相册的功能
 
 1.04，更新内容  
