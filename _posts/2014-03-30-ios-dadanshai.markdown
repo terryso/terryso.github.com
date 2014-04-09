@@ -16,11 +16,15 @@ published: true
 
 直接安装：[http://firapp.duapp.com/eup](http://firapp.duapp.com/eup)
 
-快盘下载：[http://www.kuaipan.cn/](http://www.kuaipan.cn/file/id_115663804288729102.htm)
+快盘下载：[http://www.kuaipan.cn/](http://www.kuaipan.cn/file/id_115663804288729103.htm)
 
 **版本更新：**  
 
-最新版1.0.7 更新内容
+最新版1.0.8 更新内容
+1. 增加多图标记
+2. 增加去除无图帖子的功能
+
+1.0.7 更新内容
 1. 增加最热晒图
 
 1.0.6，更新内容
