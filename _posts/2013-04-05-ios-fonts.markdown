@@ -1,14 +1,22 @@
 ---
 layout: post
 title: "iOS开发Tips，使用非默认字体"
-description: " 一般开发iOS App时，我们用到的字体都是系统默认字体。"
-tags: [ios]
+description: " 一般开发iOS App时，我们用到的字体都是系统默认字体。但如果要使用系统中的其他字体时，该怎么做呢？"
+tags: [iOS Font]
 newstylesheet: "iphone"
 published: true
 ---
 
 一般开发iOS App时，我们用到的字体都是系统默认字体，代码：
-<pre>UIFont *font = [UIFont systemFontOfSize:13.0f];</pre>
+{% highlight objective-c %}
+UIFont *font = [UIFont systemFontOfSize:13.0f];
+{% endhighlight %}
+
 但如果要使用系统中的其他字体时，该怎么做呢？  
 其实[iOSFonts](http://iosfonts.com/)这个网站列出了iOS下所有可用的字体。  
-只要找到你喜欢的字体，使用以下代码就可以了：<pre>UIFont *font = [UIFont fontWithName:@"Georgia" size:13.0f];</pre> 
+
+只要找到你喜欢的字体，使用以下代码就可以了：
+{% highlight objective-c %}
+UIFont *font = [UIFont fontWithName:@"Georgia" size:13.0f];
+{% endhighlight %}
+
