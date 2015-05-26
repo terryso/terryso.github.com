@@ -8,7 +8,7 @@ newstylesheet: "iphone"
 published: true
 ---
 
-   最近, 我老婆准备外出旅游, 于是她在手机上录入了一个旅游清单, 但是当她希望把这个清单打印在一张A4纸上时, 却发现该App没有打印清单的功能.
+最近, 我老婆准备外出旅游, 于是她在手机上录入了一个旅游清单, 但是当她希望把这个清单打印在一张A4纸上时, 却发现该App没有打印清单的功能.
 于是我便帮她上AppStore搜寻是否有打印清单的App, 但令人沮丧的是, 找遍了AppStore也没有这样一个App.
 
 为了不让老婆失望, 作为一个专业工程师的我, 只好亲自动手, 于是便有了闪印(Flash)这个App.
@@ -16,6 +16,8 @@ published: true
 闪印(Flash)是一个小而精悍的一个App, 它只专注一件事, 一键把你录入的清单打印出来.
 
 PS: 不要问我为什么这个App叫闪印(Flash), 作为理科男, 起名字神马的最讨厌了, 但我可以告诉你, 我最近非常爱看美剧《闪电侠(The Flash)》
+
+**截图：**
 
 ![Alt text](http://a5.mzstatic.com/us/r30/Purple5/v4/b4/38/bd/b438bd92-9235-3800-5384-63968712b6ff/screen322x572.jpeg)
 ![Alt text](http://a4.mzstatic.com/us/r30/Purple5/v4/f5/ba/a6/f5baa601-f971-5da7-b1e9-c7cff409e038/screen322x572.jpeg)
