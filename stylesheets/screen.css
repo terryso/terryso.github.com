@@ -875,7 +875,7 @@ img.left {
 }
 
 .page, header, footer {
-  max-width: 720px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -916,7 +916,7 @@ article header .date {
 section.content, section.footer-content {
   width: 100%;
   float: left;
-  padding-right: 5%;
+  padding-right: 0;
 }
 
 section.footer-content {
