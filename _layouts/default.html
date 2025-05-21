@@ -26,6 +26,15 @@
     <meta name="google-site-verification" content="4b2gG2_kr5STLh0RhE34iPvU59o591CoG9N6iYOazvw" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
     <script src="/javascripts/modernizr.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6W1JXH0XQ0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6W1JXH0XQ0');
+    </script>
 </head>
 <body {% if page.bodyTag %}{{page.bodyTag}}{% endif %}>
   <div class="page-container">
@@ -81,13 +90,6 @@
     <script src="/javascripts/angular.js"></script>
   {% endif %}
 {% endfor %}
-
-<div style="display:none">
-<script type="text/javascript">
-    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cspan id='cnzz_stat_icon_1000486633'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1000486633%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
-</script>
-</div>
 
 </body>
 </html>
