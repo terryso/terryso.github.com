@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Opus 与 Sonnet 编程能力信息图 (集成Gemini API)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA; /* Light grey background */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Default max-width */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Base height */
+            max-height: 400px; /* Max height */
+        }
+        @media (min-width: 768px) { /* md */
+            .chart-container {
+                height: 350px;
+            }
+        }
+        @media (min-width: 1024px) { /* lg */
+            .chart-container {
+                height: 400px;
+            }
+        }
+        h1, h2, h3 {
+            color: #9370DB; /* Purple for headings */
+        }
+        .stat-number {
+            color: #FF8C00; /* Orange for standout numbers */
+            font-weight: bold;
+        }
+        .section-intro-text {
+            color: #4A5568; /* Tailwind gray-700 */
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.75rem;
+        }
+        .card-content-text {
+            color: #2D3748; /* Tailwind gray-800 */
+        }
+        .gemini-response-area {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background-color: #f0f9ff; /* Light blue background for response */
+            border-left: 4px solid #38bdf8; /* Blue left border */
+            border-radius: 0.375rem;
+            color: #075985; /* Darker blue text */
+            font-size: 0.875rem;
+            line-height: 1.5;
+            min-height: 50px;
+        }
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border-left-color: #FF8C00; /* Orange spinner */
+            animation: spin 1s ease infinite;
+            margin: 0.5rem auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+         /* Palette: Energetic & Playful (Orange: #FF8C00, Yellow: #FFD700, Pink: #FF69B4, Teal: #008080, Purple: #9370DB) */
+    </style>
+</head>
+<body class="bg-slate-100 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-purple-600">Claude 4 AI编码洞察</div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#intro" class="text-gray-700 hover:text-purple-600">概览</a>
+                    <a href="#benchmarks" class="text-gray-700 hover:text-purple-600">性能对比</a>
+                    <a href="#features" class="text-gray-700 hover:text-purple-600">核心特性</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-purple-600">成本考量</a>
+                    <a href="#selection" class="text-gray-700 hover:text-purple-600">选择指南</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <section id="intro" class="mb-12 text-center py-12 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg shadow-xl text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Claude 4 系列：AI辅助编码新纪元</h1>
+            <p class="text-xl md:text-2xl mb-2">Anthropic 于 2025年5月22日 发布 Claude 4 Opus 与 Sonnet</p>
+            <p class="text-lg md:text-xl">重新定义编码、高级推理与AI代理的行业标杆。</p>
+        </section>
+
+        <section id="positioning" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">核心定位：Opus vs Sonnet</h2>
+            <p class="text-center section-intro-text mb-8">了解两款模型的设计理念，助您洞悉其在不同开发场景中的独特价值。</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold mb-3 text-orange-500">🚀 Claude Opus 4：智能之巅</h3>
+                    <p class="card-content-text">专为处理<span class="font-semibold text-purple-600">复杂、耗时长</span>的任务而设计，如图大型代码重构、架构变更、根据规范自主编码以及解决多步骤工程问题。强调<span class="font-semibold text-purple-600">深度推理</span>与<span class="font-semibold text-purple-600">持久作业能力</span>。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold mb-3 text-teal-500">⚙️ Claude Sonnet 4：均衡高效</h3>
+                    <p class="card-content-text">旨在提供<span class="font-semibold text-purple-600">卓越编码/推理能力</span>与<span class="font-semibold text-purple-600">运行效率</span>的平衡。针对日常开发任务优化，如代码审查、错误修复、新功能开发，并适用于<span class="font-semibold text-purple-600">高通量</span>场景。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="benchmarks" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">性能基准：正面交锋</h2>
+            <p class="text-center section-intro-text mb-8">深入剖析 Opus 4 与 Sonnet 4 在主流编码基准测试中的表现，揭示它们在不同编程任务类型上的相对优势。</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3">SWE-bench Verified (软件工程)</h3>
+                    <p class="text-sm text-gray-600 mb-2">评估模型解决真实GitHub问题的能力。Sonnet 4 在标准模式下略微领先，扩展思考模式下两者均有显著提升。</p>
+                    <div class="chart-container">
+                        <canvas id="sweBenchChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3">Terminal-bench (代理式CLI编码)</h3>
+                    <p class="text-sm text-gray-600 mb-2">Opus 4 在此项测试中表现出更明显的领先优势，尤其在启用扩展思考后，表明其在涉及命令行交互的代理任务中能力更强。</p>
+                    <div class="chart-container">
+                        <canvas id="terminalBenchChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg md:col-span-2">
+                     <h3 class="text-xl font-semibold mb-3 text-center">更多关键基准表现</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+                        <div class="bg-purple-100 p-4 rounded-lg shadow text-center">
+                            <h4 class="text-lg font-medium text-purple-700">HumanEval-Plus (函数级生成)</h4>
+                            <p class="text-3xl stat-number mt-2">Opus 4: 91%</p>
+                            <p class="text-xs text-gray-600 mt-1">(通过测试比例)</p>
+                        </div>
+                        <div class="bg-pink-100 p-4 rounded-lg shadow">
+                             <h4 class="text-lg font-medium text-pink-700 text-center">CodeBench</h4>
+                             <p class="text-sm text-gray-600 mb-2 text-center">Opus 4 表现优于 Sonnet 4。</p>
+                            <div class="chart-container !h-48 sm:!h-56 md:!h-64">
+                                <canvas id="codeBenchChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">开发者关键特性对比</h2>
+            <p class="text-center section-intro-text mb-8">除了原始性能，一系列对开发者至关重要的特性也构成了 Opus 4 和 Sonnet 4 之间的核心差异。</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-xl font-semibold mb-2">上下文窗口</h3>
+                    <p class="text-5xl stat-number">200K</p>
+                    <p class="card-content-text mt-1">Tokens (Opus & Sonnet)</p>
+                    <p class="text-sm text-gray-600 mt-2">足以处理大型代码库和冗长文档，保持长时间编码会话的连贯性。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-center">输出Token限制</h3>
+                    <p class="text-sm text-gray-600 mb-2 text-center">一个令人意外的差异点：Sonnet 4 在某些资料中拥有更大的输出Token限制。</p>
+                    <div class="chart-container !h-56 sm:!h-64 md:!h-72">
+                        <canvas id="outputTokenChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">高级内存能力</h3>
+                     <p class="card-content-text mb-2"><span class="font-semibold text-orange-500">Opus 4:</span> 显著超越前代，能创建和维护“内存文件”，积累隐性知识，对长期任务至关重要。</p>
+                    <p class="card-content-text"><span class="font-semibold text-teal-500">Sonnet 4:</span> 同样具备改进的内存能力，可保留本地文件信息，但Opus更为先进。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">🤖 "Claude Code" 代理工具</h3>
+                    <p class="card-content-text">专为开发者设计，集成于主流IDE (VS Code, JetBrains)。允许从终端委派编码任务，如编辑文件、修复错误、执行测试等。Opus 4 支持后台模式处理长时间任务。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">🤔 “扩展思考”模式</h3>
+                    <p class="card-content-text">两模型均支持，可进行更深层次推理。Opus 4 在复杂多步骤任务中运用此能力尤为突出。API用户可控制“思考预算”优化成本与性能。</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">🛠️ 并行工具使用</h3>
+                    <p class="card-content-text">两模型均能并行使用工具（如网页搜索、文件分析），并更精确遵循指令。Opus 4 在代理式工具使用方面表现突出。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">经济效益考量：定价与价值</h2>
+            <p class="text-center section-intro-text mb-8">评估模型的编程能力时，其定价策略和由此产生的价值主张是开发者必须考虑的关键因素。</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col">
+                    <h3 class="text-xl font-semibold mb-3 text-orange-500">Claude Opus 4 定价</h3>
+                    <div class="flex-grow">
+                        <p class="text-4xl my-4"><span class="stat-number">$15</span><span class="text-lg text-gray-600"> /百万输入Token</span></p>
+                        <p class="text-4xl my-4"><span class="stat-number">$75</span><span class="text-lg text-gray-600"> /百万输出Token</span></p>
+                        <p class="card-content-text mt-2">价值主张：尽管Token成本较高，但其执行长时间自主任务和处理复杂问题的能力，可能实现更低的<span class="font-semibold">单任务总成本</span>，减少重试和人工干预。</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col">
+                    <h3 class="text-xl font-semibold mb-3 text-teal-500">Claude Sonnet 4 定价</h3>
+                     <div class="flex-grow">
+                        <p class="text-4xl my-4"><span class="stat-number">$3</span><span class="text-lg text-gray-600"> /百万输入Token</span></p>
+                        <p class="text-4xl my-4"><span class="stat-number">$15</span><span class="text-lg text-gray-600"> /百万输出Token</span></p>
+                        <p class="card-content-text mt-2">价值主张：以显著更低的价格（约Opus的1/5）提供极具竞争力的高端编码性能。适合高通量任务、日常开发和预算敏感场景。免费用户也可通过Claude.ai访问。</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-700 mt-8 text-lg">💡 提示：两种模型均支持<span class="font-semibold text-purple-600">提示缓存</span>（节省高达90%）和<span class="font-semibold text-purple-600">批量处理</span>（节省高达50%）以优化成本。</p>
+        </section>
+
+        <section id="selection" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">战略选择：为您的编程任务挑选模型</h2>
+            <p class="text-center section-intro-text mb-8">基于能力、特性、基准和成本效益分析，为您的具体需求做出明智的模型选择。</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-orange-50 p-6 rounded-lg shadow-lg border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-600">何时选择 Claude Opus 4 🚀</h3>
+                    <ul class="list-disc list-inside space-y-2 card-content-text">
+                        <li><span class="font-semibold">复杂工程任务：</span>大规模代码重构、全栈应用开发、架构设计。</li>
+                        <li><span class="font-semibold">自主代理工作流：</span>需AI长时间自主运行，利用内存和工具进行复杂错误追踪。</li>
+                        <li><span class="font-semibold">深度代码库理解：</span>对复杂代码结构和依赖关系有深刻理解至关重要时。</li>
+                        <li><span class="font-semibold">前沿研发：</span>探索AI编码新应用，推动技术边界。</li>
+                        <li><span class="font-semibold">极致代码质量：</span>对代码品味和复杂问题解决方案有极高要求，预算次要。</li>
+                    </ul>
+                    <div class="mt-6" style="display: none;">
+                        <button onclick="callGeminiForScenario('opus')" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-150 ease-in-out">
+                            ✨ Opus 适用场景分析 (AI生成)
+                        </button>
+                        <div id="loading-opus" class="loading-spinner my-2" style="display: none;"></div>
+                        <div id="gemini-response-opus" class="gemini-response-area" style="display: none;"></div>
+                    </div>
+                </div>
+                <div class="bg-teal-50 p-6 rounded-lg shadow-lg border-l-4 border-teal-500">
+                    <h3 class="text-2xl font-semibold mb-4 text-teal-600">何时选择 Claude Sonnet 4 ⚙️</h3>
+                    <ul class="list-disc list-inside space-y-2 card-content-text">
+                        <li><span class="font-semibold">日常开发任务：</span>常规错误修复、标准特性实现、代码审查辅助。</li>
+                        <li><span class="font-semibold">高通量应用：</span>速度、响应和规模化成本效益关键，如AI开发者工具。</li>
+                        <li><span class="font-semibold">集成现有工具：</span>如在GitHub Copilot中利用其能力。</li>
+                        <li><span class="font-semibold">预算与功能平衡：</span>需强大编码性能但价格更易承受。</li>
+                        <li><span class="font-semibold">初步探索与原型：</span>免费套餐使其成为无初始投资尝试的绝佳选择。</li>
+                        <li><span class="font-semibold">大量单次输出：</span>若其64K输出Token限制确认，适合生成详尽文档或长脚本。</li>
+                    </ul>
+                     <div class="mt-6" style="display: none;">
+                        <button onclick="callGeminiForScenario('sonnet')" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-150 ease-in-out">
+                            ✨ Sonnet 适用场景分析 (AI生成)
+                        </button>
+                        <div id="loading-sonnet" class="loading-spinner my-2" style="display: none;"></div>
+                        <div id="gemini-response-sonnet" class="gemini-response-area" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="future" class="text-center py-12 bg-white rounded-lg shadow-xl">
+            <h2 class="text-3xl font-bold mb-6">未来展望：驾驭Claude 4，迈向AI辅助开发新境界</h2>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                Claude 4 Opus 与 Sonnet 的推出是AI辅助编程领域的重要里程碑。Opus 4 追求极致深度与复杂代理能力，而 Sonnet 4 则为广大日常编码任务提供了卓越且具成本效益的性能。
+                Anthropic 通过这一组合展现了构建AI生态系统的策略：Sonnet 推动广泛采用，Opus 突破能力边界。AI正从代码片段生成器转变为真正的协作者，深刻影响软件开发的未来。
+            </p>
+        </section>
+
+    </div>
+
+    <footer class="text-center p-6 mt-12 bg-gray-800 text-white">
+        <p>&copy; 2025 Claude AI 编码洞察。基于公开信息分析。</p>
+    </footer>
+
+    <script>
+        const CHART_COLORS = {
+            orange: '#FF8C00',
+            yellow: '#FFD700',
+            pink: '#FF69B4',
+            teal: '#008080',
+            purple: '#9370DB',
+            lightOrange: 'rgba(255, 140, 0, 0.6)',
+            lightTeal: 'rgba(0, 128, 128, 0.6)'
+        };
+
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let currentLine = '';
+            const lines = [];
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        color: '#2D3748' 
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            scales: {
+                y: { 
+                    beginAtZero: true,
+                    ticks: { 
+                        color: '#4A5568',
+                        callback: function(value) {
+                             return value + '%'; 
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.05)'
+                    }
+                },
+                x: { 
+                    ticks: { color: '#4A5568' },
+                    grid: {
+                        display: false
+                    }
+                }
+            }
+        };
+        
+        const commonBarChartOptionsNoPercentage = {
+            ...commonChartOptions,
+            scales: {
+                ...commonChartOptions.scales,
+                y: { 
+                    ...commonChartOptions.scales.y,
+                    ticks: {
+                        ...commonChartOptions.scales.y.ticks,
+                        callback: function(value) { return value; } 
+                    }
+                }
+            }
+        };
+
+
+        const sweBenchData = {
+            labels: [wrapLabel('Opus 4 (标准)', 16), wrapLabel('Sonnet 4 (标准)', 16), wrapLabel('Opus 4 (扩展思考)', 16), wrapLabel('Sonnet 4 (扩展思考)', 16)],
+            datasets: [{
+                label: 'SWE-bench 得分 (%)',
+                data: [72.5, 72.7, 79.4, 80.2],
+                backgroundColor: [CHART_COLORS.lightOrange, CHART_COLORS.lightTeal, CHART_COLORS.orange, CHART_COLORS.teal],
+                borderColor: [CHART_COLORS.orange, CHART_COLORS.teal, CHART_COLORS.orange, CHART_COLORS.teal],
+                borderWidth: 1
+            }]
+        };
+        new Chart(document.getElementById('sweBenchChart'), { type: 'bar', data: sweBenchData, options: commonChartOptions });
+
+        const terminalBenchData = {
+            labels: [wrapLabel('Opus 4 (标准)', 16), wrapLabel('Sonnet 4 (标准)', 16), wrapLabel('Opus 4 (扩展思考)', 16), wrapLabel('Sonnet 4 (扩展思考)', 16)],
+            datasets: [{
+                label: 'Terminal-bench 得分 (%)',
+                data: [43.2, 35.5, 50.0, 41.3],
+                backgroundColor: [CHART_COLORS.lightOrange, CHART_COLORS.lightTeal, CHART_COLORS.orange, CHART_COLORS.teal],
+                borderColor: [CHART_COLORS.orange, CHART_COLORS.teal, CHART_COLORS.orange, CHART_COLORS.teal],
+                borderWidth: 1
+            }]
+        };
+        new Chart(document.getElementById('terminalBenchChart'), { type: 'bar', data: terminalBenchData, options: commonChartOptions });
+
+        const codeBenchData = {
+            labels: ['Opus 4', 'Sonnet 4'],
+            datasets: [{
+                label: 'CodeBench 得分 (%)',
+                data: [79, 72], 
+                backgroundColor: [CHART_COLORS.lightOrange, CHART_COLORS.lightTeal],
+                borderColor: [CHART_COLORS.orange, CHART_COLORS.teal],
+                borderWidth: 1
+            }]
+        };
+        new Chart(document.getElementById('codeBenchChart'), {
+            type: 'bar',
+            data: codeBenchData,
+            options: {
+                indexAxis: 'y', 
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#2D3748'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: { 
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#4A5568',
+                            callback: function(value) {
+                                return value + '%'; 
+                            }
+                        },
+                        grid: {
+                            display: false 
+                        }
+                    },
+                    y: { 
+                        ticks: {
+                            color: '#4A5568' 
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    }
+                }
+            }
+        });
+        
+        const outputTokenData = {
+            labels: ['Opus 4', 'Sonnet 4'],
+            datasets: [{
+                label: '最大输出 Tokens (K)',
+                data: [32, 64],
+                backgroundColor: [CHART_COLORS.lightOrange, CHART_COLORS.lightTeal],
+                borderColor: [CHART_COLORS.orange, CHART_COLORS.teal],
+                borderWidth: 1
+            }]
+        };
+        new Chart(document.getElementById('outputTokenChart'), { type: 'bar', data: outputTokenData, options: commonBarChartOptionsNoPercentage });
+
+        async function callGeminiForScenario(modelType) {
+            const loadingIndicator = document.getElementById(`loading-${modelType}`);
+            const responseArea = document.getElementById(`gemini-response-${modelType}`);
+            const button = event.target;
+
+            loadingIndicator.style.display = 'block';
+            responseArea.style.display = 'none';
+            responseArea.innerHTML = ''; // Clear previous response
+            button.disabled = true; // Disable button during API call
+
+            let prompt = '';
+            if (modelType === 'opus') {
+                prompt = "请基于 Claude 4 Opus 的特性（如深度推理、持久作业能力、高级内存、处理复杂和耗时任务），生成3-4个具体的、多样化的编程项目或开发场景的例子，清晰解释为什么 Opus 在这些场景下是理想选择。请使用项目符号列表（bullet points）格式化您的回答，每个例子都应突出 Opus 的独特优势。";
+            } else if (modelType === 'sonnet') {
+                prompt = "请基于 Claude 4 Sonnet 的特性（如卓越编码与推理能力的平衡、运行效率、适合日常开发和高通量场景、成本效益），生成3-4个具体的、多样化的编程项目或开发场景的例子，清晰解释为什么 Sonnet 在这些场景下是理想选择。请使用项目符号列表（bullet points）格式化您的回答，每个例子都应突出 Sonnet 的独特优势。";
+            }
+
+            const apiKey = ""; // API key will be injected by the environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            
+            let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+            const payload = { contents: chatHistory };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error('Gemini API Error:', errorData);
+                    responseArea.innerHTML = `<p class="text-red-500">抱歉，调用AI分析服务时出错。详情请查看控制台。</p><p class="text-xs text-gray-500">错误代码: ${response.status}</p>`;
+                    if (errorData && errorData.error && errorData.error.message) {
+                         responseArea.innerHTML += `<p class="text-xs text-gray-500">${errorData.error.message}</p>`;
+                    }
+                } else {
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        let text = result.candidates[0].content.parts[0].text;
+                        // Basic Markdown to HTML conversion for bullet points
+                        text = text.replace(/^\s*[\*\-]\s+/gm, '<li>').replace(/\n/g, '</li>\n');
+                        if (text.endsWith('</li>\n')) { // Remove last newline if it only closes a list item
+                            text = text.substring(0, text.length -1);
+                        }
+                        responseArea.innerHTML = `<ul>${text}</ul>`;
+                    } else {
+                        responseArea.innerHTML = '<p class="text-yellow-500">抱歉，AI未能生成场景分析。请稍后再试。</p>';
+                        console.warn('Gemini API - Unexpected response structure:', result);
+                    }
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                responseArea.innerHTML = '<p class="text-red-500">抱歉，连接AI分析服务时发生网络错误。</p>';
+            } finally {
+                loadingIndicator.style.display = 'none';
+                responseArea.style.display = 'block';
+                button.disabled = false; // Re-enable button
+            }
+        }
+
+    </script>
+</body>
+</html>
