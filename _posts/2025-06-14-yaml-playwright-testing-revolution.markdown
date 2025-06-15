@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "告别脆弱的 Playwright 测试：为什么基于 YAML 的测试是未来趋势"
-date: 2025-06-15 10:00:00
+date: 2025-06-14 10:00:00
 categories: [testing, automation, playwright, yaml]
 tags: [Playwright, 测试自动化, YAML, QA, 测试, DevOps, 软件测试, 测试框架, 自动化, 质量保证, ClaudeCode, PlaywrightMCP]
 ---
