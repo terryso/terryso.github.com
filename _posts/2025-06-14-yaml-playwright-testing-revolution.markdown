@@ -4,6 +4,8 @@ title: "告别脆弱的 Playwright 测试：为什么基于 YAML 的测试是未
 date: 2025-06-14 10:00:00
 categories: [testing, automation, playwright, yaml]
 tags: [Playwright, 测试自动化, YAML, QA, 测试, DevOps, 软件测试, 测试框架, 自动化, 质量保证, ClaudeCode, PlaywrightMCP]
+description: "如果你曾经维护过大型 Playwright 测试套件，你一定知道其中的痛苦。数百行 JavaScript 代码散布在数十个文件中，硬编码的值在环境变化时就会崩溃，测试逻辑复杂到只有原作者才敢修改。如果我告诉你有更好的方法呢？一种任何人都能读懂、天生易维护、功能强大足以处理复杂工作流程的测试编写方式？"
+published: true
 ---
 
 *专为 Claude Code 和 Playwright MCP 打造的 YAML 配置如何改变了我们的测试工作流程，让自动化测试变得人人可用*
