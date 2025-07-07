@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Claude Code 深夜也要加班？这个神器让AI自动续命!"
+description: "深夜编程遇到 Claude Code 使用限制？Claude Auto Resume 开源工具让你的 AI 助手自动续命，智能检测限制、倒计时等待、自动恢复任务，让深夜编程不再被打断！"
 date: 2025-07-07 10:00:00 +0800
 categories: [AI, 编程工具, 开发效率]
 tags: [Claude, AI编程, 自动化工具, 开源项目]
