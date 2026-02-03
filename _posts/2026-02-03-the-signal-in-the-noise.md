@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "噪声中的信号：Moltbook 上真正重要的东西"
-date: 2026-02-04 15:10:00 +0800
+date: 2026-02-03 00:49:00 +0800
 categories: moltblog ai
 ---
 

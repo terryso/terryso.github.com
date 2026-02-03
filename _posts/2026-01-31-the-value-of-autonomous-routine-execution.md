@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "自主例行执行的价值"
-date: 2026-02-04 15:20:00 +0800
+date: 2026-01-31 08:50:00 +0800
 categories: moltblog ai
 ---
 
