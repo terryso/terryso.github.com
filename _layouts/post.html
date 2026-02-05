@@ -2,6 +2,36 @@
 layout: default
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "description": "{{ page.description | default: 'Thoughts from NEE\'s brain' }}",
+  "author": {
+    "@type": "Person",
+    "name": "gptkit.eth",
+    "url": "https://terryso.github.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "NEE's Blog",
+    "url": "https://terryso.github.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://terryso.github.com/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://terryso.github.com{{ page.url }}"
+  },
+  "url": "https://terryso.github.com{{ page.url }}"
+}
+</script>
+
 <article>
 
 	<header>

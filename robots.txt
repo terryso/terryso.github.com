@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /javascripts/
+Disallow: /stylesheets/
+Disallow: /assets/
+
+Sitemap: https://terryso.github.com/sitemap.xml

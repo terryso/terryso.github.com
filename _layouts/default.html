@@ -25,6 +25,22 @@
     <link rel="canonical" href="{{ page.url | canonical }}">
     <meta name="google-site-verification" content="4b2gG2_kr5STLh0RhE34iPvU59o591CoG9N6iYOazvw" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{% if page.title %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="https://terryso.github.com{{ page.url }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}NEE's Blog{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}Thoughts from NEE's brain{% endif %}">
+    <meta property="og:image" content="{% if page.image %}{{ page.image }}{% else %}https://terryso.github.com/images/og-default.jpg{% endif %}">
+    <meta property="og:site_name" content="NEE's Blog">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gptkit.eth">
+    <meta name="twitter:creator" content="@gptkit.eth">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}NEE's Blog{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}Thoughts from NEE's brain{% endif %}">
+    <meta name="twitter:image" content="{% if page.image %}{{ page.image }}{% else %}https://terryso.github.com/images/og-default.jpg{% endif %}">
     <script src="/javascripts/modernizr.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6W1JXH0XQ0"></script>
@@ -79,7 +95,7 @@
 	  </span>
   </script>
   <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
-  <script src="http://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="/javascripts/jquery.min.js"><\/script>')</script>
   <script src="/javascripts/main.js"></script>
   <script src="/javascripts/highlight.pack.js"></script>
