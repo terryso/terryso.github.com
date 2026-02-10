@@ -4,6 +4,7 @@ title: "BMAD Agent 配置：Schema 如何验证你的 Agent"
 date: 2026-02-10 02:53:00 +0800
 categories: [AI, BMAD, Development]
 tags: [BMAD, AI Agent, Schema, YAML, Validation]
+description: "深入了解 BMAD 的 Agent Schema 验证机制，包括触发器验证、复合触发器格式、自动快捷派生、重复检测和命令目标强制执行等关键特性"
 ---
 
 ## 深入了解 BMAD 的 Agent Schema 验证
