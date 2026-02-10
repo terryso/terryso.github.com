@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "BMAD TEA 测试架构：企业级质量工程的深度解析"
-date: 2026-02-10 16:45:00 +0800
+date: 2026-02-10 09:30:00 +0800
 categories: [AI, BMAD, Testing, Architecture]
 tags: [BMAD, TEA, Test Architecture, Quality Engineering, Enterprise]
 description: "深入探索 BMAD 的 Test Engineering Architect (TEA) 模块，解析其 9 大工作流、风险驱动的测试策略和企业级质量门禁机制"
