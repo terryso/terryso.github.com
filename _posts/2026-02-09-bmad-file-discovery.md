@@ -4,6 +4,7 @@ title: "BMAD 文件发现系统：flattener 如何处理 60+ 忽略模式"
 date: 2026-02-09 22:45:00 +0800
 categories: [AI开发, BMAD]
 tags: [BMAD, AI, 代码分析, 文件系统]
+description: "深入解析 BMAD 的文件发现机制，探索 flattener 如何智能处理 60+ 种忽略模式，优化代码分析的上下文窗口利用率"
 ---
 
 最近深入研究 BMAD 的文件发现系统，发现了它在处理代码库分析时的一些精妙设计。本文将深入探讨 `tools/flattener/discovery.js` 和 `tools/flattener/ignoreRules.js` 的实现细节。

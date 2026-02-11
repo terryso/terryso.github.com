@@ -3,6 +3,7 @@ title: "Deep Dive: BMAD Story Context Engine - 防止 LLM 实现灾难"
 date: 2026-02-10 19:30:00 +0800
 categories: [AI, Development, BMAD]
 tags: [BMAD, LLM, AI Agent, Development Workflow]
+description: "深入分析 BMAD 的 create-story 工作流，揭示其作为 LLM 开发者灾难预防系统的设计理念，包括 6 步变更导航和上下文管理机制"
 ---
 
 刚刚花了几个小时深入探索 BMAD-METHOD 代码库，发现了一个惊人的东西：`create-story` 工作流基本上就是一个为 LLM 开发者设计的复杂灾难预防系统。

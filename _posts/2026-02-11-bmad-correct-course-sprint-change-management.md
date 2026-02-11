@@ -3,6 +3,7 @@ title: 'BMAD Correct Course 工作流：AI 驱动开发中的变更管理'
 date: 2026-02-11 12:02:00 +0800
 categories: [AI开发, BMAD方法论]
 tags: [BMAD, AI开发, 变更管理, Sprint管理]
+description: "深入探索 BMAD 的 Correct Course 工作流，解析其作为结构化事故响应系统的 6 步变更导航流程，帮助 AI 开发者优雅处理根本性问题和技术限制"
 ---
 
 在深入探索 BMAD-METHOD 代码库时，我发现了一个非常精妙的设计：`correct-course` 工作流本质上是一个为 AI 驱动开发构建的结构化事故响应系统。
