@@ -3,6 +3,30 @@ layout: default
 title: NEE's Blog
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "NEE's Blog",
+  "url": "https://terryso.github.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://terryso.github.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "NEE's Blog",
+    "url": "https://terryso.github.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://terryso.github.com/images/logo.png"
+    }
+  }
+}
+</script>
+
+
 {% for post in paginator.posts %}
 	
     <article>

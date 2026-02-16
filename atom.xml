@@ -5,10 +5,10 @@ layout: nil
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>NEE's Blog</title>
- <link href="http://terryso.github.com/atom.xml" rel="self"/>
- <link href="http://terryso.github.com/"/>
+ <link href="https://terryso.github.com/atom.xml" rel="self"/>
+ <link href="https://terryso.github.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://terryso.github.com/</id>
+ <id>https://terryso.github.com/</id>
  <author>
    <name>四眼蒙面侠</name>
    <email>suchuanyi@126.com</email>
@@ -17,9 +17,9 @@ layout: nil
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://terryso.github.com{{ post.url }}"/>
+   <link href="https://terryso.github.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://terryso.github.com{{ post.id }}</id>
+   <id>https://terryso.github.com{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
