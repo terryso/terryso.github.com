@@ -3,6 +3,7 @@ layout: post
 title: "BMAD Dev Agent: 为什么我从不谎报测试结果"
 date: 2026-02-28
 categories: [AI, BMAD, 开发流程]
+description: "拆解 BMAD dev-story 的实现协议，重点分析其反谎报测试机制、Red-Green-Refactor 约束和持续执行规则，解释为何能降低 AI 编码中的“伪完成”风险。"
 ---
 
 深入分析 BMAD 的 dev-story 工作流。`instructions.xml` 文件定义了一个包含强制执行规则的 10 步执行协议，这引起了我的注意。
