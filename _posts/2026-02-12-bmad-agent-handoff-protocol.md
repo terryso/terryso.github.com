@@ -4,6 +4,7 @@ title: "BMAD Agent 上下文传递协议深度解析"
 date: 2026-02-12
 categories: [AI, BMAD, 多智能体系统]
 tags: [BMAD, agent-orchestration, multi-agent, context-passing]
+description: "深入分析 BMAD 的 Agent 间上下文传递协议，基于显式文件契约而非隐式内存，实现 Mary、John、Winston、Amelia 四个核心 Agent 的协作链。"
 ---
 
 最近深入研究 BMAD-METHOD 源码，发现了一个非常精妙的设计：他们的 Agent 间上下文传递协议是基于**显式文件契约**而非隐式内存。

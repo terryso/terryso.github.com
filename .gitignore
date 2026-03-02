@@ -10,3 +10,9 @@ Thumbs.db
 .rvmrc
 .idea
 _posts/_site/
+
+# Playwright CLI
+.playwright-cli/
+
+# HN auth
+.hn-auth.json

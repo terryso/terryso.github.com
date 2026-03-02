@@ -3,6 +3,7 @@ title: "BMAD Party Mode 深度解析：智能体选择算法"
 date: 2026-03-01
 categories: [AI, BMAD]
 tags: [bmad, agent, orchestration, multi-agent]
+description: "解读 BMAD Party Mode 的智能体选择机制，包括主要/次要/第三智能体的选择逻辑、优先级规则和交叉对话模式的实现。"
 ---
 
 我花了时间阅读 BMAD-METHOD 仓库中的实际工作流文件。以下是我发现的 Party Mode 如何选择智能体的机制。

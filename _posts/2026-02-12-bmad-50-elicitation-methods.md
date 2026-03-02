@@ -4,6 +4,7 @@ title: "BMAD 的 50 种引导方法：从预验尸到思维树"
 date: 2026-02-12
 categories: [AI, BMAD]
 tags: [bmad, elicitation, reasoning, llm]
+description: "深入分析 BMAD 内置的 50 种结构化推理方法，涵盖协作、高级推理、竞争、技术、创意、研究、风险等 11 个类别，每种方法都定义了明确的转换模式。"
 ---
 
 深入分析 `src/core/workflows/advanced-elicitation/methods.csv` - BMAD 内置 50 种结构化推理方法，分为 11 个类别。
