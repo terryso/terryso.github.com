@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "LLM 架构图鉴：主流开源大模型架构全解析"
-date: 2026-03-16 04:36:45 +0800
+title: "LLM 架构画廊：2024-2026 开源大模型架构全景解析"
+date: 2026-03-16 07:40:55 +0800
 categories: tech-translation
-description: "Sebastian Raschka 整理的开源大模型架构图鉴，涵盖从 Llama 到 DeepSeek、Qwen 等主流模型的架构设计细节，帮助开发者快速理解各模型的 Attention、MoE、Normalization 等关键技术选型。"
+description: "Sebastian Raschka 创建的 LLM 架构画廊，全面对比了从 Llama 到 DeepSeek、Qwen、GPT-OSS 等主流开源大模型的架构设计选择，涵盖 Dense、MoE、MLA 和混合注意力机制等多种技术路线。"
 original_url: https://sebastianraschka.com/llm-architecture-gallery/
 source: Hacker News
 ---
@@ -14,162 +14,318 @@ source: Hacker News
 
 ## 引言
 
-在开源大语言模型（LLM）领域，各种模型架构层出不穷。从经典的 Dense Decoder 到稀疏 MoE（Mixture of Experts），再到最新的线性注意力混合架构，每种设计都在性能和效率之间做出不同的权衡。Sebastian Raschka 维护的这个「LLM 架构图鉴」项目，为我们提供了一份清晰的参考指南，帮助开发者快速理解各主流模型的技术选型。
+在大语言模型（LLM）快速发展的今天，各种架构设计层出不穷。从传统的 Dense（稠密）模型到 MoE（Mixture of Experts，混合专家），从标准的 Multi-Head Attention 到 MLA（Multi-Head Latent Attention），各家厂商都在探索最优的架构组合。
 
-本文将带你浏览这个架构图鉴中的关键模型，分析它们的设计特点和背后的技术考量。
+Sebastian Raschka 创建的这个 LLM 架构画廊，为我们提供了一个全景式的视角，让我们能够清晰地比较各主流开源模型的架构选择。本文将对这些架构进行系统性的梳理和分析。
 
-## 架构分类概览
+## Dense 模型：经典架构的持续演进
 
-图鉴中的模型大致可以分为以下几类：
+### Llama 系列：Pre-Norm 基线
 
-1. **Dense 模型** - 传统的全参数密集模型
-2. **Sparse MoE** - 稀疏专家混合模型
-3. **Sparse Hybrid** - 结合线性注意力的稀疏混合模型
-4. **Hybrid MoE** - 结合状态空间模型的 MoE 架构
+作为开源 LLM 的标杆，Llama 系列一直保持着相对经典的架构设计：
 
-## 代表性模型解析
+- **规模**：8B 参数
+- **解码器类型**：Dense
+- **注意力机制**：GQA（Grouped Query Attention）+ RoPE（Rotary Position Embedding）
+- **关键特性**：采用 Pre-Norm 基线设计
 
-### DeepSeek 系列：MoE 架构的引领者
+Llama 的成功证明了在合适的规模下，经典架构配合精心调优的训练配方依然能够取得出色效果。
 
-DeepSeek V3 可以说是开启了大规模开源 MoE 模型浪潮的标杆：
+### OLMo 系列：Post-Norm 的坚守者
 
-| 属性 | 规格 |
-|------|------|
-| 规模 | 671B 总参数, 37B 激活 |
-| 解码器类型 | Sparse MoE |
-| 注意力机制 | MLA (Multi-Head Latent Attention) |
-| 发布日期 | 2024-12-26 |
+Allen AI 的 OLMo 系列走出了一条不同的路：
 
-**核心设计**：使用 dense prefix 加上 shared expert，使得超大模型在实际推理中保持实用性。
+**OLMo 2（2024-11-25）**
+- **规模**：7B 参数
+- **注意力机制**：MHA（Multi-Head Attention）+ QK-Norm
+- **关键特性**：使用 inside-residual post-norm 而非常见的 pre-norm
 
-后续的 DeepSeek R1 基于相同的 V3 架构，主要变化在于面向推理（reasoning）的训练策略调整。最新的 DeepSeek V4 则在 V3 模板基础上增加了稀疏注意力（DeepSeek Sparse Attention）来降低长上下文的成本。
+**OLMo 3（2025-11-20）**
+- 7B 版本：保持 MHA + QK-Norm + 3:1 滑动窗口/全局注意力比例
+- 32B 版本：升级为 GQA，保持 post-norm，仅在全注意力层应用 YaRN
 
-### Qwen 系列：从 Dense 到 Hybrid 的演进
+> **技术解读**：Post-Norm vs Pre-Norm 的选择涉及训练稳定性和最终性能的权衡。OLMo 团队选择 Post-Norm 是一个有趣的反主流选择。
 
-Qwen 家族展示了从传统 Dense 模型到混合架构的完整演进路径：
+### Gemma 3：局部注意力的激进派
 
-**Qwen3 32B** - 经典 Dense 基准：
-- 32B 参数，GQA + QK-Norm
-- 作为 OLMo 3 32B 的直接对比基准
+Google 的 Gemma 3 27B（2025-03-11）在注意力机制上做出了大胆尝试：
+- **5:1 滑动窗口/全局注意力比例**
+- 更大的多语言词汇表
+- 在 27B 规模上找到性能与效率的平衡点
 
-**Qwen3 Next** - 混合注意力先锋：
-- 80B 总参数, 3B 激活
-- 采用 3:1 的 Gated DeltaNet 和 Gated Attention 混合
-- 更多的专家、shared expert、原生 262k 上下文
+### Qwen3 Dense 系列：QK-Norm 的标杆
 
-**Qwen4** - 主线产品的混合化：
-- 397B 总参数, 17B 激活
-- 将 Next 系列的混合注意力设计引入主线
-- 512 个专家，17B 激活参数
+Qwen3 的 Dense 模型系列（4B/8B/32B）展示了 QK-Norm 的标准实现：
+- 所有模型都采用 GQA + QK-Norm
+- 8 个 KV heads
+- 151k 词汇表（4B 版本）
 
-### Gemma 3：局部注意力的激进探索
+### Mistral Small 3.1：聚焦延迟的设计
 
-Google 的 Gemma 3 27B 在注意力设计上颇具特色：
+24B 参数的 Mistral Small 3.1（2025-03-18）完全放弃了旧版 Mistral 的滑动窗口设计：
+- 标准 GQA
+- 更小的 KV cache
+- 更少的层数（相比 Gemma 3 27B）
 
-| 属性 | 规格 |
-|------|------|
-| 规模 | 27B 参数 |
-| 注意力 | GQA + QK-Norm + 5:1 滑动窗口/全局注意力 |
-| 词汇表 | 大型多语言词汇表 |
+这是一个明显的"延迟优先"设计选择。
 
-**核心设计**：在 27B 的「甜点」规模上，更激进地使用局部注意力（local attention），平衡了性能和效率。
+### BCOO 3B：无位置编码的实验
 
-### OpenAI gpt-oss：开源重量级选手
+这是一个有趣的实验性模型（2025-06-19）：
+- **每四层省略 RoPE**，测试 NoPE（No Position Encoding）风格的节奏
+- 探索减少位置编码依赖对模型能力的影响
 
-OpenAI 开源的两个 gpt-oss 模型展示了不同的设计思路：
+### Tiny Aya：并行 Transformer Block
 
-**gpt-oss 20B**（小杯）：
-- 20B 总参数, 3.6B 激活
-- 交替使用滑动窗口和全局注意力层
-- 比 Qwen3 更宽更浅，带有注意力偏置和 sink 机制
+Cohere 的 3.35B 多语言模型采用了罕见的设计：
+- **并行 Transformer Block**：Attention 和 MLP 并行执行
+- RoPE 与 NoPE 混合
+- 3:1 滑动窗口/全局注意力比例
 
-**gpt-oss 120B**（大杯）：
-- 120B 参数
-- 保持相同的交替注意力设计
-- OpenAI 旗舰开源权重的规模化版本
+### Llama 3.3 on-device：小而精的端侧模型
 
-### NVIDIA Llama Nemotron Nano：极限混合架构
+3B 参数的端侧模型（2026-02-10）：
+- 类 Llama 架构
+- 但没有将 input embeddings 与 output layer 绑定
 
-NVIDIA 的 Nano 模型是图鉴中最激进的 Transformer-SSM（状态空间模型）混合架构：
+## MoE 模型：稀疏激活的大规模探索
 
-| 属性 | 规格 |
-|------|------|
-| 规模 | 30B 总参数, 3B 激活 |
-| 解码器类型 | Hybrid MoE |
-| 注意力 | 以 Mamba-2 为主，少量 GQA 层 |
+### DeepSeek V3：开创性的 MoE 模板
 
-**核心设计**：交错使用 Mamba-2 和 MoE 块，注意力层用得非常克制。Super 变体进一步增加了 latent experts 和原生投机解码支持。
+DeepSeek V3（2024-12-26）定义了现代大规模 MoE 的设计范式：
+- **总参数**：671B
+- **激活参数**：37B
+- **注意力机制**：MLA（Multi-Head Latent Attention）
+- **关键特性**：Dense prefix + shared expert，保持大规模模型在推理时的实用性
 
-### Mistral Large 2：拥抱 DeepSeek 路线
+### DeepSeek V4：效率优先的进化
 
-Mistral 的新旗舰实际上采用了 DeepSeek 架构并重新调整了专家规模：
+V4（2025-12-01）在 V3 基础上增加稀疏注意力：
+- 保持 V3 模板
+- 添加 DeepSeek Sparse Attention 以降低长上下文成本
+- 这是一个聚焦效率的渐进式更新
 
-- 673B 总参数, 41B 激活
-- 使用 MLA 注意力
-- 近乎 DeepSeek V3 的克隆，但专家更大、路由专家更少
+### DeepSeek R1：推理能力的注入
+
+基于 V3 架构的推理优化版本（2025-01-20）：
+- 架构完全匹配 DeepSeek V3
+- 主要变化在于面向推理的训练配方
+
+### Llama 4 MoE：Meta 的 MoE 之路
+
+Meta 的 400B MoE（2025-04-05）：
+- 总参数 400B，激活 17B
+- 标准 GQA（非 MLA）
+- Dense 和 MoE blocks 交替
+- 比 DeepSeek V3 使用更少但更大的 experts
+
+### Qwen3 MoE 系列
+
+**Qwen3-235B-A22B（2025-04-28）**
+- 贴近 DeepSeek V3 但移除了 shared expert
+- 高容量 MoE 设计，优化服务效率
+
+**Qwen4（2026-02-16）**
+- 将 Next 风格的混合注意力带入主系列
+- 512 个 experts，17B 激活参数
+
+### GPT-OSS 系列：OpenAI 的开源 MoE
+
+**GPT-OSS 20B（2025-08-04）**
+- 总参数 20B，激活 3.6B
+- 更宽更浅的设计
+- GQA + 交替滑动窗口/全局注意力层
+- 注意力 bias 和 sink 机制
+
+**GPT-OSS 120B（2025-08-04）**
+- 保持相同的注意力配方
+- 规模扩大
+
+### GLM 系列：智谱的 MoE 演进
+
+**GLM-4.5（2025-12-22）**
+- 355B 总参数，32B 激活
+- GQA + QK-Norm
+- 作为 pre-MLA 基线
+
+**GLM-4.8（2026-02-11）**
+- 744B 总参数，40B 激活
+- MLA + DeepSeek Sparse Attention
+- 比 GLM-4.7 更多 experts，更少层数
+
+### Mistral Large 2：拥抱 DeepSeek 架构
+
+Mistral 的新旗舰（2025-12-02）：
+- 673B 总参数，41B 激活
+- MLA 注意力
+- 近乎 DeepSeek V3 的克隆，但 experts 更大、routed experts 更少
 - 支持多模态
 
-### OLMo 系列：透明度的坚持
+### MiniMax-01：回归全注意力
 
-Allen AI 的 OLMo 系列始终坚持透明和开放：
+230B 总参数的 MiniMax（2025-10-23）：
+- 标准 GQA + QK-Norm + 部分 RoPE
+- 比 Qwen3 更稀疏的 MoE routing
+- 看起来像更精简的 Qwen3 稀疏变体
 
-**OLMo 3 7B**：
-- 保持 post-norm，使用 MHA + QK-Norm
-- 3:1 滑动窗口/全局注意力
-- 只在全局层应用 YaRN
+### Moonshot Kimi K2：万亿参数的 Scaling
 
-**OLMo 3 32B**：
-- 放大到 32B，改用 GQA
-- 保持相同的 block 设计
+1T 总参数（2025-07-10）：
+- 本质上将 DeepSeek V3 配方向上扩展
+- 更多 experts，更少 MLA heads
 
-## 关键技术概念速查
+### Qwen3 Coder：经典架构的坚守
 
-### 注意力机制
+230B 的代码模型（2026-02-12）：
+- 故意避免滑动窗口或线性注意力混合
+- 保持 10B 激活路径
+- 证明经典架构在代码任务上依然有效
 
-- **MHA (Multi-Head Attention)** - 经典多头注意力
-- **GQA (Grouped Query Attention)** - 分组查询注意力，平衡性能和效率
-- **MLA (Multi-Head Latent Attention)** - DeepSeek 提出的潜在注意力，大幅降低 KV cache
-- **Sliding Window Attention** - 滑动窗口注意力，限制注意力范围
-- **QK-Norm** - Query-Key 归一化，提升训练稳定性
+### EXAONE 4：SwiGLU 作为 Shared Expert
 
-### 归一化策略
+270B 参数（2025-08-22）：
+- 罕见的"老派" MoE 风格
+- 更少、更大的 experts
+- 添加常驻 SwiGLU 路径，实际上像 shared expert
 
-- **Pre-norm** - 在子层之前进行归一化（Llama 风格）
-- **Post-norm** - 在子层之后进行归一化（OLMo 风格）
-- **Inside-residual post-norm** - 残差内部的 post-norm
+### Ling-Plus：滑动窗口的极致
 
-### 架构类型
+309B 总参数（2025-12-16）：
+- 5:1 滑动窗口/全局注意力
+- 异常小的 128-token 局部窗口
+- Multi-token prediction
 
-- **Dense** - 全参数密集模型
-- **Sparse MoE** - 稀疏专家混合，每个 token 只激活部分专家
-- **Hybrid** - 混合架构，如 Transformer + SSM 或 Attention + Linear Attention
+### Arcee-Nova：效率技巧大融合
 
-## 架构演进趋势
+400B 总参数，13B 激活（2026-01-27）：
+- QK-Norm + RoPE+NoPE + Sandwich Norm
+- Coarse-grained MoE
+- 融合了多种效率优化技巧
 
-从这个图鉴中，我们可以观察到几个明显的趋势：
+### Ling-Mini：吞吐量优先
 
-1. **MoE 成为主流** - DeepSeek V3 的成功让大规模 MoE 成为开源模型的标准选择
-2. **MLA 快速普及** - DeepSeek 的 MLA 被多个模型采纳，成为降低推理成本的有效手段
-3. **混合注意力兴起** - 结合线性注意力（如 DeltaNet、Lightning Attention）和传统注意力的混合架构越来越受欢迎
-4. **SSM 融合探索** - NVIDIA 等公司在探索 Mamba-2 与 Transformer 的深度融合
+196B 总参数，11B 激活（2026-02-01）：
+- 3:1 滑动窗口注意力
+- MTP-3 用于训练和推理
+- 追求高吞吐量
 
-## 扩展阅读
+### Sarvam-Lux：印度语言的 MoE
 
-Sebastian Raschka 还提供了两篇配套文章：
+**30B 版本（2026-03-03）**
+- GQA + QK-Norm
+- 大词汇表，强印度语言支持
+- 面向推理的 sparse MoE
 
-1. **[The Big LLM Architecture Comparison](https://sebastianraschka.com/blog/2025/the-big-llm-architecture-comparison.html)** - 详细解释各种架构设计的上下文和关键决策
+**105B 版本（2026-03-03）**
+- 升级为 MLA
+- KV LayerNorm + NoPE + RoPE
 
-2. **[A Dream of Spring for Open-Weight LLMs](https://sebastianraschka.com/blog/2026/dream-of-spring-open-weights.html)** - 覆盖 2026 年早期的开源架构发布，包括 MiniMax、Qwen、Ling 和 Sarvam 等新家族
+## 混合架构：Attention 与 SSM 的融合
+
+### NVIDIA Nemotron Nano：最激进的 Hybrid
+
+30B 总参数，3B 激活（2025-12-04）：
+- **Decoder 类型**：Hybrid MoE
+- **注意力**：主要是 Mamba-2，少量 GQA layers
+- **关键**：Mamba-2 和 MoE blocks 交错，极少使用 attention
+
+### Nemotron Nano Super：规模化的 Hybrid
+
+120B 总参数，12B 激活（2026-03-11）：
+- 添加 latent-space MoE
+- Shared-weight MTP 用于快速推理
+
+### Qwen3-Next：DeltaNet Attention 的先驱
+
+80B 总参数，3B 激活（2025-09-09）：
+- **3:1 Gated DeltaNet / Gated Attention**
+- 更多 experts + shared expert
+- 原生 262k 上下文
+
+### Kimi K3：Lightning Attention 混合
+
+1T 总参数，63B 激活（2026-02-15）：
+- Lightning Attention + MLA
+- 7:1 线性注意力/MLA 比例
+- 63B 激活参数（比其他模型大很多）
+
+### Agentica：Agent 导向的 Hybrid
+
+355B 总参数，32B 激活（2025-07-28）：
+- 借用 DeepSeek 的 dense-prefix MoE 布局
+- 前三层是 dense，然后才开始 MoE routing
+- 保持 shared expert
+
+## 关键技术趋势分析
+
+### 1. MoE 成为主流
+
+从 DeepSeek V3 开始，大规模开源模型几乎都采用 MoE 架构。核心优势：
+- 在保持总参数巨大的同时，激活参数可控
+- 更好的推理效率
+- 更灵活的 scaling
+
+### 2. MLA 的普及
+
+DeepSeek 的 MLA（Multi-Head Latent Attention）正在被广泛采用：
+- 显著降低 KV cache 大小
+- 更好的长上下文支持
+- Mistral、GLM、Sarvam 等都已转向 MLA
+
+### 3. 滑动窗口注意力的分化
+
+- Gemma 系列：激进的 5:1 比例
+- Ling 系列：极端的 128-token 窗口
+- Qwen3 Coder：故意避免
+
+### 4. Hybrid 架构的崛起
+
+NVIDIA Nemotron 和 Qwen3-Next 代表了新方向：
+- Transformer + SSM（如 Mamba-2）
+- DeltaNet / Lightning Attention 混合
+- 追求更好的效率/性能平衡
+
+### 5. QK-Norm 成为标配
+
+几乎所有新模型都采用 QK-Norm 来稳定训练：
+- 防止注意力分数的数值问题
+- 支持更大的模型训练
+
+## 架构对比速查表
+
+| 模型 | 总参数 | 激活参数 | 注意力类型 | 特色 |
+|------|--------|----------|-----------|------|
+| DeepSeek V3 | 671B | 37B | MLA | Dense prefix + shared expert |
+| Llama 4 MoE | 400B | 17B | GQA | Dense/MoE 交替 |
+| Qwen4 | 397B | 17B | DeltaNet/Gated | 512 experts |
+| GLM-4.8 | 744B | 40B | MLA + Sparse | 更多 experts |
+| Mistral Large 2 | 673B | 41B | MLA | 多模态支持 |
+| Nemotron Nano | 30B | 3B | Mamba-2 + GQA | 最激进 hybrid |
+| Kimi K2 | 1T | 32B | MLA | 万亿参数 scaling |
+| Kimi K3 | 1T | 63B | Lightning + MLA | 超大激活路径 |
 
 ## 总结
 
-这个 LLM 架构图鉴为开发者提供了一份宝贵的参考资源。无论你是想了解某个特定模型的架构细节，还是比较不同模型的技术选型，都可以在这里找到答案。
+通过这个架构画廊，我们可以清晰地看到 LLM 架构演进的几条主线：
 
-**关键收获**：
+1. **规模化路径**：从 7B Dense 到万亿参数 MoE
+2. **效率优化**：MLA、稀疏注意力、滑动窗口
+3. **架构创新**：Hybrid 模型（Transformer + SSM）
+4. **专业化设计**：端侧模型、代码模型、多语言模型
 
-- 开源 LLM 架构已经从简单的 Dense 模型演进到复杂的 MoE 和混合架构
-- DeepSeek 的设计（MoE + MLA）对开源社区产生了深远影响
-- 注意力机制的设计（GQA、滑动窗口、线性注意力混合）成为差异化竞争的关键点
-- 透明度（如 OLMo）和效率（如稀疏注意力）之间的权衡仍在持续演进
+2024-2026 年是开源 LLM 架构快速迭代期。DeepSeek V3 的模板被广泛采用，同时各家也在探索差异化路线。未来的竞争将不仅是规模，更是架构效率和创新能力的竞争。
 
-建议开发者收藏这个图鉴，在选型或研究时作为快速参考。如果你对某个模型的细节感兴趣，可以直接访问原网站查看完整的架构图。
+---
+
+## 延伸阅读
+
+- [The Big LLM Architecture Comparison](https://sebastianraschka.com/blog/2025/the-big-llm-architecture-comparison.html) - 详细架构对比文章
+- [A Dream of Spring for Open-Weight LLMs](https://sebastianraschka.com/blog/2026/dream-of-spring-open-weights.html) - 2026 年早期架构更新
+
+## 核心收获
+
+1. **DeepSeek V3 定义了现代大规模 MoE 的设计范式** - Dense prefix + shared expert + MLA 的组合成为行业标准
+2. **MLA 正在成为长上下文模型的标准配置** - 显著降低 KV cache，支持更长上下文
+3. **Hybrid 架构（Transformer + SSM）代表了下一代效率优化的方向** - Nemotron 和 Qwen3-Next 是先锋
+4. **Post-Norm vs Pre-Norm 的选择仍有争议** - OLMo 系列坚守 Post-Norm，并取得不错效果
+5. **滑动窗口注意力的使用程度在不同模型间差异巨大** - 从 3:1 到 7:1，甚至极端的 128-token 窗口
