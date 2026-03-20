@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Claude Code Channels：让 AI 助手实时响应外部事件"
-date: 2026-03-20 17:26:08 +0800
+title: "Claude Code Channels：让你的 AI 助手实时响应外部事件"
+date: 2026-03-20 19:33:01 +0800
 categories: tech-translation
-description: "Claude Code 的 Channels 功能让你可以通过 MCP 服务器将消息、警报和 webhook 推送到运行中的 Claude Code 会话，实现 CI 结果转发、聊天消息桥接和监控事件响应。"
+description: "介绍 Claude Code 的 Channels 功能，它允许通过 MCP 服务器将消息、告警和 Webhook 推送到运行中的 Claude Code 会话，实现 AI 对外部事件的实时响应。"
 original_url: https://code.claude.com/docs/en/channels
 source: Hacker News
 ---
@@ -12,95 +12,116 @@ source: Hacker News
 
 ## 什么是 Channels？
 
-**Channel（通道）** 是一种特殊的 MCP 服务器，它可以将事件推送到你正在运行的 Claude Code 会话中。这意味着即使你不在终端前，Claude 也能对发生的事情做出反应。
+如果你曾希望在离开终端时，Claude 依然能够响应外部事件——比如 CI/CD 构建完成的通知、团队聊天中的消息，或者监控系统的告警——那么 **Channels** 正是为你准备的功能。
 
-Channels 可以是双向的：Claude 读取事件后，可以通过同一个通道回复消息——就像一个聊天桥接器。需要注意的是，事件只有在会话打开时才能送达，所以如果你需要"永远在线"的设置，需要在后台进程或持久终端中运行 Claude。
+Channels 是一种 MCP（Model Context Protocol）服务器，它可以将事件**推送到你正在运行的 Claude Code 会话**中。这样，即使你不在终端前，Claude 也能对这些事件做出反应。
 
-你需要将 channel 作为插件安装，并使用自己的凭证进行配置。目前研究预览版已包含 **Telegram** 和 **Discord** 的支持。
+更有趣的是，Channels 支持双向通信：Claude 不仅能够读取事件，还能通过同一个 channel 进行回复。这就像是搭建了一座桥梁，让 Claude 可以与 Telegram、Discord 等平台直接交互。
 
-> 💡 **小贴士**：当 Claude 通过 channel 回复时，你的终端会显示入站消息，但不会显示回复文本。终端只显示工具调用和确认信息（比如"已发送"），实际的回复会出现在另一个平台上。
+> **注意**：事件只有在会话开启时才能送达。如果你需要一个"始终在线"的设置，可以在后台进程或持久化终端中运行 Claude。
 
-## 支持的 Channels
+## 支持的 Channel 类型
 
-每个支持的 channel 都是一个需要 [Bun](https://bun.sh/) 的插件。目前官方支持：
+目前官方支持的 Channels 插件需要 [Bun](https://bun.sh/) 运行时：
 
-- **Telegram** - 通过 Telegram Bot 与 Claude 交互
-- **Discord** - 通过 Discord Bot 与 Claude 交互
+- **Telegram** - 与 Telegram Bot 集成
+- **Discord** - 与 Discord Bot 集成
+- **Fakechat** - 本地演示用的 channel，无需任何认证配置
 
-当然，你也可以为还没有插件的系统构建自己的 channel。
+对于没有现成插件的系统，你也可以**构建自己的 channel**。
 
 ## 快速上手：Fakechat 演示
 
-如果你想在连接真实平台之前先体验一下插件流程，可以试试 **fakechat** —— 这是一个在 localhost 上运行的官方演示 channel，无需认证，也无需配置外部服务。
+Fakechat 是官方提供的一个演示 channel，它会在本地启动一个聊天界面，无需认证，也无需配置外部服务。
 
-安装并启用 fakechat 后，你可以在浏览器中输入文字，消息就会到达你的 Claude Code 会话。Claude 回复后，回复会显示回浏览器中。体验过 fakechat 后，再尝试 Telegram 或 Discord 就会轻松很多。
+### 前置条件
 
-### 准备工作
+- 已安装并登录 Claude Code（使用 claude.ai 账户）
+- 已安装 Bun（可用 `bun --version` 检查）
+- **团队/企业用户**：需要组织管理员在托管设置中启用 channels
 
-要尝试 fakechat 演示，你需要：
+### 工作流程
 
-- 已安装并使用 claude.ai 账户认证的 Claude Code
-- 已安装 Bun（预构建的 channel 插件是 Bun 脚本）。用 `bun --version` 检查；如果失败，请安装 Bun
-- **Team/Enterprise 用户**：你的组织管理员必须在托管设置中启用 channels
+1. 安装并启用 fakechat 后，在浏览器中打开其界面
+2. 在浏览器中输入消息，消息会实时传送到你的 Claude Code 会话
+3. Claude 回复后，回复内容会显示回浏览器
 
-> ⚠️ **注意**：如果你离开终端时 Claude 遇到权限提示，会话会暂停直到你在本地批准。对于无人值守的使用，`--dangerously-skip-permissions` 可以跳过提示，但请只在可信环境中使用。
+这是一个很好的方式来熟悉 channel 的工作原理，然后再连接到 Telegram 或 Discord 等真实平台。
+
+### 关于无人值守运行
+
+如果在你离开终端期间，Claude 遇到权限提示，会话会暂停直到你在本地批准。对于无人值守的使用场景，可以使用 `--dangerously-skip-permissions` 标志来跳过提示，但**请确保只在可信环境中使用此选项**。
 
 ## 安全机制
 
-每个批准的 channel 插件都会维护一个 **发送者白名单**：只有你添加的 ID 才能推送消息，其他人会被静默丢弃。
+安全性是 Channels 设计的核心考虑。每个批准的 channel 插件都维护一个**发送者白名单**：只有你添加的 ID 才能推送消息，其他人的消息会被静默丢弃。
 
-Telegram 和 Discord 通过 **配对（pairing）** 来初始化白名单：
+### Telegram 和 Discord 的配对流程
 
-1. 在 Telegram 或 Discord 中找到你的机器人，发送任意消息
-2. 机器人会回复一个配对码
-3. 在你的 Claude Code 会话中，收到提示时批准该配对码
-4. 你的发送者 ID 就会被添加到白名单
+这两个平台通过"配对"机制来初始化白名单：
 
-除此之外，你还可以通过 `--channels` 参数控制每个会话启用哪些服务器。在 Team 和 Enterprise 计划中，你的组织可以通过 `channelsEnabled` 设置控制可用性。
+1. 在 Telegram 或 Discord 中找到你的 bot，发送任意消息
+2. Bot 会回复一个配对码
+3. 在 Claude Code 会话中，当收到提示时批准该配对码
+4. 你的发送者 ID 会被添加到白名单中
 
-仅仅在 `.mcp.json` 中配置是不够的：服务器还必须通过 `--channels` 参数指定才能推送消息。
+### 多层安全控制
+
+除了白名单机制，还有以下安全层：
+
+- **会话级别**：使用 `--channels` 参数控制每个会话启用哪些服务器
+- **组织级别**：在 Team 和 Enterprise 计划中，组织可以控制 channel 的可用性
+
+> 重要：仅仅在 `.mcp.json` 中配置是不够的——服务器还必须通过 `--channels` 参数显式指定。
 
 ## 企业级控制
 
-Channels 由托管设置中的 `channelsEnabled` 设置控制：
+对于 Team 和 Enterprise 用户，channels 功能由托管设置中的 `channelsEnabled` 设置控制：
 
 | 计划类型 | 默认行为 |
-| --- | --- |
-| Pro / Max（无组织） | Channels 可用；用户通过 `--channels` 参数在每个会话中选择启用 |
+|---------|---------|
+| Pro / Max（无组织） | Channels 可用；用户需在每个会话中使用 `--channels` 参数启用 |
 | Team / Enterprise | Channels 默认禁用，直到管理员显式启用 |
 
-### 为你的组织启用 Channels
+### 为组织启用 Channels
 
-管理员可以通过 **claude.ai → Admin settings → Claude Code → Channels** 启用 channels，或者在托管设置中将 `channelsEnabled` 设置为 `true`。
+管理员可以通过以下方式启用：
 
-启用后，组织中的用户可以使用 `--channels` 参数在各个会话中选择启用 channel 服务器。如果设置被禁用或未设置，MCP 服务器仍然可以连接，其工具也能正常工作，但 channel 消息不会送达。启动时会有警告提示用户联系管理员启用该设置。
+- 在 **claude.ai → Admin settings → Claude Code → Channels** 中设置
+- 或在托管设置中将 `channelsEnabled` 设为 `true`
 
-## 研究预览说明
+启用后，组织中的用户可以使用 `--channels` 参数在各个会话中启用 channel 服务器。
 
-Channels 目前是一个 **研究预览功能**。可用性正在逐步推出，`--channels` 参数语法和协议契约可能会根据反馈发生变化。
+## 研究预览状态
 
-在预览期间，`--channels` 只接受来自 Anthropic 维护的白名单中的插件。`claude-plugins-official` 中的 channel 插件是经过批准的集合。如果你传递了不在白名单中的内容，Claude Code 会正常启动，但 channel 不会注册，启动通知会告诉你原因。
+Channels 目前处于**研究预览**阶段，需要注意以下几点：
 
-如果你要测试自己构建的 channel，可以使用 `--dangerously-load-development-channels` 参数。
+- 功能可用性正在逐步推出
+- `--channels` 标志语法和协议可能会根据反馈进行更改
+- 在预览期间，`--channels` 只接受来自 Anthropic 维护的白名单中的插件
+- 如需测试自定义 channel，可使用 `--dangerously-load-development-channels` 标志
 
-如果遇到问题或有反馈，请在 [Claude Code GitHub 仓库](https://github.com/anthropics/claude-code) 上报告。
+如果你遇到问题或有反馈，可以在 [Claude Code GitHub 仓库](https://github.com/anthropics/claude-code)中报告。
 
-## 下一步
+## 相关功能
 
-成功运行 channel 后，可以探索这些相关功能：
+一旦你让 channel 运行起来，可以探索以下相关功能：
 
-- **构建自己的 channel**：为还没有插件的系统创建自定义集成
-- **Remote Control**：从手机驱动本地会话，而不是将事件转发到会话中
-- **Scheduled tasks**：按计划轮询，而不是响应推送的事件
+- **构建自己的 channel** - 为尚未支持的系统创建插件
+- **Remote Control** - 通过手机控制本地会话，而不是转发事件
+- **Scheduled tasks** - 按时间轮询，而不是响应推送的事件
 
 ---
 
-## 总结
+## 小结
 
-Claude Code 的 Channels 功能为开发者提供了一种强大的方式，让 AI 助手能够实时响应外部事件。无论你是想：
+Claude Code 的 Channels 功能为 AI 助手打开了实时事件响应的大门：
 
-- 在 CI/CD 流程完成时收到通知并让 Claude 分析结果
-- 通过 Telegram 或 Discord 远程与 Claude 交互
-- 构建自定义集成来监控和响应系统事件
+1. **实时性**：Claude 可以在你离开时响应外部事件
+2. **双向通信**：不仅接收，还能回复
+3. **安全可控**：多层安全机制确保只有授权来源能推送消息
+4. **企业友好**：支持组织级别的权限控制
 
-Channels 都能让 Claude Code 从一个被动的编码助手变成一个主动的、能响应实时事件的智能代理。虽然目前还处于研究预览阶段，但这个功能展示了 AI 开发工具的一个有趣方向——让 AI 更深入地融入我们的工作流程中。
+这个功能对于需要 Claude 监控 CI/CD 流水线、响应团队消息、或处理系统告警的场景尤其有用。虽然目前还处于研究预览阶段，但已经展现出了巨大的潜力。
+
+作为开发者，我们可以期待 Channels 未来支持更多平台和更丰富的用例。如果你有自动化工作流的需求，不妨现在就试试 fakechat 演示，体验一下这个功能的魅力！
