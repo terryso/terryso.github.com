@@ -135,6 +135,7 @@ NEVER provide examples or list options...
 
 有些功能通过 LLM 直接执行不是最佳方案。作者以音乐播放为例，创建了句子触发自动化：
 
+{% raw %}
 ```yaml
 alias: Music Shortcut
 triggers:
@@ -167,6 +168,7 @@ variables:
   target_player: |
     {{ satellite_player_map.get(trigger.satellite_id, "media_player.default_speaker") }}
 ```
+{% endraw %}
 
 ## 自定义唤醒词训练
 
@@ -182,6 +184,7 @@ variables:
 
 解决方案是创建自动化覆盖本地 intent：
 
+{% raw %}
 ```yaml
 alias: Override HassGetWeather
 triggers:
@@ -206,6 +209,7 @@ actions:
         in one to two sentences...
   - set_conversation_response: "{{ summary.data }}"
 ```
+{% endraw %}
 
 ### 处理不清晰请求
 

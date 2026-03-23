@@ -95,6 +95,7 @@ function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T) => voi
 
 使用 React Context API 来管理全局主题状态：
 
+{% raw %}
 ```typescript
 import React, { createContext, useContext, useEffect } from 'react';
 
@@ -149,6 +150,7 @@ export function useTheme() {
   return context;
 }
 ```
+{% endraw %}
 
 **关键设计点：**
 

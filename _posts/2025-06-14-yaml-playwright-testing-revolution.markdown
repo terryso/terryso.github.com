@@ -81,6 +81,7 @@ steps:
 
 常见工作流程变成了构建块：
 
+{% raw %}
 ```yaml
 # steps/login.yml
 steps:
@@ -90,6 +91,7 @@ steps:
   - "点击登录按钮"
   - "验证页面显示 Swag Labs"
 ```
+{% endraw %}
 
 编写一次，到处使用。告别复制粘贴的疯狂。
 
@@ -243,6 +245,7 @@ your-project/
 ```
 
 ### **3. 编写你的第一个测试**
+{% raw %}
 ```yaml
 # test-cases/login.yml
 tags:
@@ -256,6 +259,7 @@ steps:
   - "点击登录按钮"
   - "验证登录成功"
 ```
+{% endraw %}
 
 ### **4. 执行和迭代**
 ```bash
@@ -280,12 +284,14 @@ steps:
 ```
 
 ### **动态步骤参数**
+{% raw %}
 ```yaml
 steps:
   - "将商品 {{PRODUCT_NAME}} 添加到购物车"
   - "设置数量为 {{QUANTITY}}"
   - "应用折扣码 {{DISCOUNT_CODE}}"
 ```
+{% endraw %}
 
 ### **综合报告**
 - **HTML 报告**：美观的交互式测试报告
@@ -296,6 +302,7 @@ steps:
 ## 实际应用场景
 
 ### **电商平台测试**
+{% raw %}
 ```yaml
 # test-cases/ecommerce-flow.yml
 tags: [e2e, purchase, critical]
@@ -310,6 +317,7 @@ steps:
   - "确认订单"
   - "验证订单成功"
 ```
+{% endraw %}
 
 ### **用户注册流程**
 ```yaml

@@ -132,6 +132,7 @@ git memento notes-rewrite-setup
 
 在 PR 中自动将 AI 会话记录渲染为评论，方便代码审查：
 
+{% raw %}
 ```yaml
 name: memento-note-comments
 
@@ -157,6 +158,7 @@ jobs:
           mode: comment
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
+{% endraw %}
 
 ### 模式二：CI 门禁（gate）
 

@@ -109,10 +109,12 @@ dequote {copy} {A}
 
 ### 定义新操作符
 
+{% raw %}
 ```om
 define { double-quote {quote quote} } { double-quote {A} }
 → {{{A}}}
 ```
+{% endraw %}
 
 ### Unicode 支持
 
