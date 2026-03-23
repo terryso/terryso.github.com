@@ -1,5 +1,4 @@
-auto: true
 permalink: /blog/:title
-pygments: true
+highlighter: rouge
 paginate: 10 # the number of post per page
 

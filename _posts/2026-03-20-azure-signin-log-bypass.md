@@ -3,7 +3,7 @@ layout: post
 title: "微软 Azure 又曝登录日志绕过漏洞：GraphGoblin 与第四个漏洞详解"
 date: 2026-03-20 21:41:55 +0800
 categories: tech-translation
-description: "安全研究员发现 Azure Entra ID 的第三和第四个登录日志绕过漏洞，攻击者可以获取有效 Token 而不在日志中留下任何痕迹，微软 MSRC 却将其定性为"中等"严重性。"
+description: '安全研究员发现 Azure Entra ID 的第三和第四个登录日志绕过漏洞，攻击者可以获取有效 Token 而不在日志中留下任何痕迹，微软 MSRC 却将其定性为"中等"严重性。'
 original_url: https://trustedsec.com/blog/full-disclosure-a-third-and-fourth-azure-sign-in-log-bypass-found
 source: Hacker News
 ---
