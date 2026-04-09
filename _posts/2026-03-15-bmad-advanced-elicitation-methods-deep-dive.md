@@ -1,5 +1,6 @@
 ---
 title: "BMAD高级诱导方法深度解析：50种推理方法完整列表"
+description: "深度解析 BMAD Advanced Elicitation 模块的 50 种结构化推理方法，涵盖协作、风险、技术、创意等分类，展示如何通过选择特定推理角度替代笼统重试来提升 AI 输出质量。"
 date: 2026-03-15
 categories: [BMAD, AI-Agent]
 tags: [bmad, elicitation, reasoning, methods]

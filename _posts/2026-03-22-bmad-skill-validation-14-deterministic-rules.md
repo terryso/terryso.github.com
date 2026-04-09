@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "BMAD Skill Validation System: 14 Deterministic Rules That Catch Real Bugs"
+description: "深入解析 BMAD 技能验证系统的 14 条确定性规则，涵盖 SKILL.md 验证、Agent 触发器匹配、命令一致性检查等，展示如何用正则表达式作为快速预检来捕获 LLM 工作流中的结构性错误。"
 date: 2026-03-22
 categories: [BMAD, AI Agents, Validation]
 tags: [bmad, validation, deterministic, skills, llm-workflows]
