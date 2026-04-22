@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入 Open Agent SDK（五）：会话持久化与安全防线"
-date: 2026-04-22 10:00:00 +0800
+date: 2026-04-22 20:00:00 +0800
 categories: tech
 description: "分析 Open Agent SDK 的会话持久化、权限控制、沙盒机制和 Hook 系统——SessionStore 的五个核心操作、六种 PermissionMode、SandboxChecker 的路径与命令过滤、20+ 生命周期事件的 HookRegistry，以及四者组合构建安全 Agent 的完整方案。"
 tags: [AI, Swift, Agent, SDK, 安全, 开源]

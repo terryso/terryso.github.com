@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入 Open Agent SDK（四）：多 Agent 协作——子代理、团队与任务编排"
-date: 2026-04-22 10:00:00 +0800
+date: 2026-04-22 19:00:00 +0800
 categories: tech
 description: "分析 Open Agent SDK 的多 Agent 协作机制：子 Agent 生成（SubAgentSpawner 协议、DefaultSubAgentSpawner、AgentTool）、Task 任务系统（生命周期与状态机）、Team 团队管理、MailboxStore 消息传递，以及实际的编排模式。"
 tags: [AI, Swift, Agent, SDK, 多Agent, 开源]
