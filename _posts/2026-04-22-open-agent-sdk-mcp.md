@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入 Open Agent SDK（三）：MCP 集成实战——让 Agent 连接万物"
-date: 2026-04-24 10:00:00 +0800
+date: 2026-04-22 10:00:00 +0800
 categories: tech
 description: "分析 Open Agent SDK 的 MCP 集成：五种传输配置、MCPClientManager 连接流程、运行时动态管理、MCP 资源系统、InProcessMCPServer 零开销模式，让 Agent 通过标准协议接入任意外部工具。"
 tags: [AI, Swift, Agent, SDK, MCP, 开源]
@@ -15,7 +15,7 @@ MCP（Model Context Protocol）就是干这个的。这篇文章看 Open Agent S
 
 ## MCP 协议是什么
 
-MCP 是 Anthropic 提出的一个开放协议，定义了 LLM 应用和外部工具/数据源之间的通信标准。核心思路很简单：
+MCP 是 Anthropic 提出的一个开放协议，定义了 LLM 应用和外部工具/数据源之间的通信标准。思路是：
 
 - **工具端**（MCP Server）暴露一组工具，每个工具有名字、描述、输入 schema
 - **调用端**（MCP Client）通过标准协议发现工具、调用工具、拿到结果
@@ -62,7 +62,7 @@ let servers: [String: McpServerConfig] = [
 ]
 ```
 
-`MCPStdioTransport` 内部用 Foundation 的 `Process` 启动子进程，用 `FileDescriptor` 做底层 I/O。有几点值得注意：
+`MCPStdioTransport` 内部用 Foundation 的 `Process` 启动子进程，用 `FileDescriptor` 做底层 I/O。几个细节：
 
 - **命令解析**：如果 command 不是绝对路径，会先 `which` 查找。找不到就当文件路径用
 - **消息分隔**：每条 JSON-RPC 消息以换行符分隔，支持 CRLF
@@ -259,7 +259,7 @@ print("Removed: \(result.removed)")  // 之前有但现在没有的
 print("Errors: \(result.errors)")    // 连接失败的
 ```
 
-`MCPClientManager.setServers()` 的 diff 逻辑值得一看：
+`MCPClientManager.setServers()` 的 diff 逻辑看一下：
 
 ```swift
 public func setServers(_ servers: [String: McpServerConfig]) async -> McpServerUpdateResult {

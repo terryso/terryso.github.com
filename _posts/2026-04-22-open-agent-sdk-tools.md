@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入 Open Agent SDK（二）：34 个工具的背后——工具协议、三层架构与自定义扩展"
-date: 2026-04-23 10:00:00 +0800
+date: 2026-04-22 10:00:00 +0800
 categories: tech
 description: "分析 Open Agent SDK 的工具系统：ToolProtocol 协议设计、Core/Advanced/Specialist 三层架构、defineTool 工厂函数的 Codable 自动解码、工具池组装与过滤机制。"
 tags: [AI, Swift, Agent, SDK, 工具系统, 开源]

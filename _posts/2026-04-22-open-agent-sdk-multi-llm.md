@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入 Open Agent SDK（六）：多 LLM 提供商与运行时控制"
-date: 2026-04-27 10:00:00 +0800
+date: 2026-04-22 10:00:00 +0800
 categories: tech
 description: "分析 Open Agent SDK 的多 LLM 提供商支持（LLMClient 协议、AnthropicClient、OpenAIClient 适配层）、运行时模型切换与计费、Thinking/Effort 配置、Skills 系统与工具限制，以及预算控制、中断、动态权限等运行时控制机制。"
 tags: [AI, Swift, Agent, SDK, LLM, 开源]
@@ -84,7 +84,7 @@ public actor AnthropicClient: LLMClient {
 }
 ```
 
-请求构建很简单——POST 到 `/v1/messages`，header 里放 `x-api-key` 和 `anthropic-version`：
+请求就是 POST 到 `/v1/messages`，header 里放 `x-api-key` 和 `anthropic-version`：
 
 ```swift
 private nonisolated func buildRequest(body: [String: Any]) throws -> URLRequest {

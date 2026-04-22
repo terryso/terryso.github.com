@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入 Open Agent SDK（四）：多 Agent 协作——子代理、团队与任务编排"
-date: 2026-04-25 10:00:00 +0800
+date: 2026-04-22 10:00:00 +0800
 categories: tech
 description: "分析 Open Agent SDK 的多 Agent 协作机制：子 Agent 生成（SubAgentSpawner 协议、DefaultSubAgentSpawner、AgentTool）、Task 任务系统（生命周期与状态机）、Team 团队管理、MailboxStore 消息传递，以及实际的编排模式。"
 tags: [AI, Swift, Agent, SDK, 多Agent, 开源]
@@ -643,7 +643,7 @@ TaskStore 是 Actor，多个 Agent 并发更新同一条任务不会出问题（
 
 ## 设计思路的取舍
 
-这套多 Agent 协作机制有几个值得注意的设计选择：
+这套多 Agent 协作机制有几个设计选择：
 
 **为什么子 Agent 不能再生子 Agent？** `DefaultSubAgentSpawner` 在创建子 Agent 时过滤掉了 AgentTool。这是有意的限制——如果不限制，一个 Agent 生成一个 Agent 再生成一个 Agent，递归深度不可控，token 消耗也会指数级增长。
 
