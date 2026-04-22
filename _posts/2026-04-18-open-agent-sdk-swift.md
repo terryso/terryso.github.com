@@ -274,9 +274,9 @@ await hookRegistry.register(.preToolUse, definition: HookDefinition(
 - **结构化日志**：JSON 格式日志，方便对接 ELK、Datadog 等
 - **查询中断**：支持中途取消查询并获取部分结果
 
-## 19 个示例项目
+## 31 个示例项目
 
-SDK 附带了 19 个完整的示例项目，覆盖了几乎所有使用场景：BasicAgent、StreamingAgent、CustomTools、MCPIntegration、SessionsAndHooks、MultiToolExample、SubagentExample、PermissionsExample、SkillsExample、SandboxExample、LoggerExample、ModelSwitchingExample、QueryAbortExample 等等。
+SDK 附带了 31 个完整的示例项目，覆盖了几乎所有使用场景：BasicAgent、StreamingAgent、CustomTools、MCPIntegration、SessionsAndHooks、MultiToolExample、SubagentExample、PermissionsExample、SkillsExample、SandboxExample、LoggerExample、ModelSwitchingExample、QueryAbortExample、PolyvLiveExample、AdvancedMCPExample、ContextInjectionExample 等等（19 个功能演示 + 12 个兼容性验证）。
 
 ## 项目状态
 
@@ -285,6 +285,18 @@ SDK 附带了 19 个完整的示例项目，覆盖了几乎所有使用场景：
 ## 总结
 
 Open Agent SDK (Swift) 提供的不只是 LLM API 的一层封装。完整的工具系统、多轮对话管理、会话持久化、权限控制、MCP 集成、子 Agent 协作——这些是构建真正能用的 AI Agent 应用时绕不开的基础设施。如果你在做 macOS 应用，想加入 AI Agent 能力，或者单纯对 Swift 写 Agent 系统感兴趣，可以 clone 下来跑跑看。
+
+---
+
+**深入 Open Agent SDK 系列文章**：
+
+- **第 0 篇**：Open Agent SDK (Swift)：用原生 Swift 并发构建 AI Agent 应用（本文）
+- **第 1 篇**：Agent Loop 内核：从 prompt 到多轮对话的完整运转机制
+- **第 2 篇**：34 个工具的背后：工具协议、三层架构与自定义扩展
+- **第 3 篇**：MCP 集成实战：让 Agent 连接万物
+- **第 4 篇**：多 Agent 协作：子代理、团队与任务编排
+- **第 5 篇**：会话持久化与安全防线
+- **第 6 篇**：多 LLM 提供商与运行时控制
 
 **GitHub**：[terryso/open-agent-sdk-swift](https://github.com/terryso/open-agent-sdk-swift)
 **许可证**：MIT

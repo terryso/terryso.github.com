@@ -16,3 +16,5 @@ _posts/_site/
 
 # HN auth
 .hn-auth.json
+.claude/
+_bmad/
