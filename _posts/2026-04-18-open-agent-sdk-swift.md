@@ -291,7 +291,7 @@ Open Agent SDK (Swift) 提供的不只是 LLM API 的一层封装。完整的工
 **深入 Open Agent SDK 系列文章**：
 
 - **第 0 篇**：Open Agent SDK (Swift)：用原生 Swift 并发构建 AI Agent 应用（本文）
-- **第 1 篇**：Agent Loop 内核：从 prompt 到多轮对话的完整运转机制
+- **第 1 篇**：[Agent Loop 内核：从 prompt 到多轮对话的完整运转机制](/blog/open-agent-sdk-agent-loop)
 - **第 2 篇**：34 个工具的背后：工具协议、三层架构与自定义扩展
 - **第 3 篇**：MCP 集成实战：让 Agent 连接万物
 - **第 4 篇**：多 Agent 协作：子代理、团队与任务编排

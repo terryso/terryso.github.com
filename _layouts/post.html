@@ -43,7 +43,14 @@ layout: default
 
 	<script type="module">
 		import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-		mermaid.initialize({ startOnLoad: true, theme: 'default' });
+		mermaid.initialize({ startOnLoad: false, theme: 'default' });
+		document.querySelectorAll('pre code.language-mermaid').forEach((block) => {
+			const div = document.createElement('pre');
+			div.className = 'mermaid';
+			div.textContent = block.textContent;
+			block.parentElement.replaceWith(div);
+		});
+		mermaid.run();
 	</script>
 
     <div id="disqus_thread"></div>
