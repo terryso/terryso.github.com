@@ -105,7 +105,7 @@ public enum ToolContent: Sendable {
 | `fileCache` | 文件缓存 |
 | `env` | 自定义环境变量 |
 
-这么多可选字段看起来复杂，实际上遵循一个简单的原则：**工具需要什么就注入什么，不需要的就是 nil**。Read 工具只看 `cwd`、`sandbox`、`fileCache`；AgentTool 只看 `agentSpawner`；CronTools 只看 `cronStore`。每个工具只依赖自己需要的那个 Store，不知道也不关心其他 Store 的存在。
+这么多可选字段，规则很简单：**工具需要什么就注入什么，不需要的就是 nil**。Read 工具只看 `cwd`、`sandbox`、`fileCache`；AgentTool 只看 `agentSpawner`；CronTools 只看 `cronStore`。每个工具只依赖自己需要的那个 Store，不知道也不关心其他 Store 的存在。
 
 `ToolContext` 还提供了两个 copy 方法：`withToolUseId()` 用于更新调用 ID（每次工具执行时由 ToolExecutor 调用），`withSkillContext()` 用于递增技能嵌套深度（SkillTool 调用子技能时使用）。
 
@@ -148,7 +148,7 @@ private struct FileReadInput: Codable {
 }
 ```
 
-执行逻辑很直接：解析路径 → 检查沙箱 → 查缓存 → 读文件 → 分页 → 返回带行号的内容。一个值得注意的细节是文件缓存：如果 `context.fileCache` 有值，先查缓存，命中就跳过磁盘 I/O。
+执行逻辑很直接：解析路径 → 检查沙箱 → 查缓存 → 读文件 → 分页 → 返回带行号的内容。还有个文件缓存的细节：如果 `context.fileCache` 有值，先查缓存，命中就跳过磁盘 I/O。
 
 再看 **Bash** 工具。它比 Read 复杂得多，因为要处理超时、输出截断、后台进程等问题。Bash 的输入有 5 个字段：
 
@@ -547,7 +547,7 @@ let agent = createAgent(options: AgentOptions(
 
 **协议驱动**。`ToolProtocol` 只规定工具的形状（名字、描述、输入 schema、执行方法），不规定工具怎么实现。这让内置工具和自定义工具走完全一样的代码路径。
 
-**依赖注入**。`ToolContext` 的 20+ 个可选字段不是为了复杂而复杂——每个工具只看自己需要的字段，其余全是 nil。AgentTool 不知道 CronStore 的存在，CronCreate 不知道 SubAgentSpawner 的存在。
+**依赖注入**。`ToolContext` 的 20+ 个可选字段看着多，但每个工具只看自己需要的字段，其余全是 nil。AgentTool 不知道 CronStore 的存在，CronCreate 不知道 SubAgentSpawner 的存在。
 
 **分层组织**。Core/Advanced/Specialist 三层不是代码分层（它们的代码结构完全一样），而是按依赖复杂度划分。Core 层的工具可以独立运行，Advanced 层需要 Store，Specialist 层需要更专业的领域设施。
 
