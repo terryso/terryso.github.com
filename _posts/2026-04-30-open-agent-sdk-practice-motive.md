@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入 Open Agent SDK（番外篇）：实战验证——把 SDK 塞进一个 macOS 原生 Agent 应用"
-date: 2026-05-01 16:00:00 +0800
+date: 2026-04-30 16:00:00 +0800
 categories: tech
 description: "把 Open Agent SDK 集成到开源 macOS 原生 Agent 应用 Motive 中，用 SDKBridge 替换掉外部 opencode 进程，验证 SDK 在真实 GUI 应用场景下的工程表现。全文记录架构对比、踩坑记录和最终的集成代码。"
 tags: [AI, Swift, Agent, SDK, macOS, 实战, 开源]
