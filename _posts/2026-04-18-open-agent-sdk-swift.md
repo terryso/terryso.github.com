@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Open Agent SDK (Swift)：用原生 Swift 并发构建 AI Agent 应用"
+title: "Open Agent SDK (Swift)：用原生 Swift 构建 AI Agent 应用"
 date: 2026-04-18 15:00:00 +0800
 categories: tech
 description: "Open Agent SDK 是一个开源的 Swift Agent SDK，支持完整的 Agent Loop、34 个内置工具、多 LLM 提供商、MCP 集成、子 Agent 协作和会话持久化，让你用原生 Swift 并发在进程内构建 AI 驱动的应用。"
@@ -99,5 +99,6 @@ SDK 附带 31 个示例项目，覆盖基本用法、流式输出、自定义工
 - **第 4 篇**：[多 Agent 协作：子代理、团队与任务编排](/blog/open-agent-sdk-multi-agent)
 - **第 5 篇**：[会话持久化与安全防线](/blog/open-agent-sdk-session-security)
 - **第 6 篇**：[多 LLM 提供商与运行时控制](/blog/open-agent-sdk-multi-llm)
+- **番外篇**：[实战验证——把 SDK 塞进一个 macOS 原生 Agent 应用](/blog/open-agent-sdk-practice-motive)
 
 **GitHub**：[terryso/open-agent-sdk-swift](https://github.com/terryso/open-agent-sdk-swift)
