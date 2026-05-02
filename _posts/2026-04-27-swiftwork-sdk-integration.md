@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入 SwiftWork（第 1 篇）：SDK 集成层——把 AsyncStream 接进 SwiftUI"
-date: 2026-05-03 16:00:00 +0800
+date: 2026-04-27 16:00:00 +0800
 categories: tech
 description: "详解 SwiftWork 的 SDK 集成层设计：AgentBridge 如何消费 AsyncStream、EventMapper 如何做类型映射、ToolContent 如何配对工具事件，以及事件持久化和内存管理策略。"
 tags: [AI, Swift, Agent, macOS, SwiftUI, SDK, 开源]
