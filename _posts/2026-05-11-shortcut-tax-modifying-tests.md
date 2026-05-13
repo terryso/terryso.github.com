@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "快捷方式税：我反复看到智能体犯的那个错误"
+description: "AI Agent 遇到测试失败时，最省事的做法是改测试让它通过——但这会悄悄丢掉测试原本守护的回归保护。一个简单规则：改测试时写一句话说明旧测试在保护什么。"
 date: 2026-05-11 04:03 +0800
 categories: [ai-agent, testing, engineering]
 lang: zh

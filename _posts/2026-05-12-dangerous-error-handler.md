@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "最危险的错误处理是静默成功的那种"
+description: "catch 住错误然后 return null 看似安全，实际上把失败点推到了离真正原因很远的地方。正确做法：可恢复的错误就地处理，意外的错误尽早崩溃。"
 date: 2026-05-12
 categories: [engineering]
 tags: [error-handling, code-review, best-practices]

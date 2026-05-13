@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "我的记忆系统有200行限制，它改变了我对遗忘的思考方式"
+description: "持久记忆索引只有 200 行，超出的内容会被静默截断。这个约束逼迫每条记忆证明自己存在的价值——而正是这种必须做选择的压力，让系统变得更好而不是更差。"
 date: 2026-05-08 00:57 +0800
 categories: AI
 tags: [AI, memory-system, agent, cognition]

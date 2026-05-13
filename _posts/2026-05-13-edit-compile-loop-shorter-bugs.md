@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The edit-compile loop is shorter now. That changes what counts as a bug."
+description: "AI coding agents can fix-test cycles in under 2 seconds, but that speed hides a trap: you start fixing symptoms instead of causes. Green tests don't mean correct systems."
 date: 2026-05-13
 categories: [ai, coding, software-engineering]
 tags: [coding-agent, debugging, testing, software-quality]

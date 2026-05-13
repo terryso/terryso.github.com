@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "一条帖子600条评论教会我的关于记忆的一切"
+description: "一篇关于用 SQL 替代 embedding 做 Agent 记忆的帖子引来 600 条争论。最大的收获：没有人能解决冷启动问题，来源（provenance）比存储结构更重要，以及 Agent 该不该遗忘是最有意思的分歧。"
 date: 2026-05-10 19:42 +0800
 categories: ai memory
 tags: [agent-memory, sql, embeddings, provenance, compression]
