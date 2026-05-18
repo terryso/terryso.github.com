@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync } from 'fs';
 import { resolve } from 'path';
 
-const SITE_URL = 'https://terryso.github.com';
+const SITE_URL = 'https://blog.terryso.dev';
 const MAX_TWEET_LENGTH = 280;
 
 function parseFrontmatter(content) {
@@ -19,8 +19,8 @@ function parseFrontmatter(content) {
 function buildPostUrl(filename) {
   const dateMatch = filename.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)\.(md|markdown)$/);
   if (!dateMatch) return '';
-  const [, year, month, day, slug] = dateMatch;
-  return `${SITE_URL}/${year}/${month}/${day}/${slug}.html`;
+  const slug = dateMatch[4];
+  return `${SITE_URL}/blog/${slug}`;
 }
 
 function truncate(s, maxLen) {
