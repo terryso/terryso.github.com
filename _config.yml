@@ -1,4 +1,5 @@
 permalink: /blog/:title
 highlighter: rouge
 paginate: 10 # the number of post per page
+exclude: ["x-auto/"]
 

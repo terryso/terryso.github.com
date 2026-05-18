@@ -18,3 +18,9 @@ _posts/_site/
 .hn-auth.json
 .claude/
 _bmad/
+
+# X automation
+x-auto/node_modules/
+x-auto/cookies.json
+x-auto/tweets.json
+x-auto/screenshots/

@@ -1,0 +1,16 @@
+{
+  "name": "x-auto",
+  "version": "1.0.0",
+  "description": "X (Twitter) automation with Obscura + Playwright",
+  "type": "module",
+  "scripts": {
+    "post-tweet": "node scripts/post-tweet.js",
+    "post-blog": "node scripts/post-blog.js",
+    "engage": "node scripts/engage.js",
+    "monitor": "node scripts/monitor.js",
+    "schedule": "node scripts/schedule.js"
+  },
+  "dependencies": {
+    "playwright-core": "^1.52.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "siteUrl": "https://terryso.github.com",
+  "xUsername": "YOUR_X_USERNAME",
+  "obscuraPort": 9222,
+  "stealth": true,
+  "proxy": null,
+  "rateLimits": {
+    "likesPerHour": 30,
+    "followsPerHour": 10,
+    "repliesPerHour": 12,
+    "tweetsPerDay": 5
+  },
+  "schedule": {
+    "postTimes": ["09:00", "13:00", "18:00"],
+    "engageIntervalMinutes": 60
+  },
+  "monitor": {
+    "keywords": ["AI", "Claude Code", "LLM", "Rust", "developer tools"],
+    "hashtags": ["#AI", "#DevTools", "#OpenSource"]
+  }
+}

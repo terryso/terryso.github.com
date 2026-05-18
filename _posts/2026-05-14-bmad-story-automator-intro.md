@@ -43,7 +43,7 @@ tags: [BMAD, Story Automator, Claude Code, Agent, 自动化]
 
 如果你想体验 Story Automator，需要先把 BMAD 升到 **6.6**。安装时记得把 **BMad Automator (Experimental)** 这个模块勾上。
 
-<img src="../images/posts/story-automator-intro/01-menu.png" alt="BMAD 6.6 安装时新增的 BMad Automator 模块" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
+<img src="https://blog.terryso.dev/images/posts/story-automator-intro/01-menu.png" alt="BMAD 6.6 安装时新增的 BMad Automator 模块" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
 
 不然装完 BMAD，后面是用不起来的。
 
@@ -55,7 +55,7 @@ tags: [BMAD, Story Automator, Claude Code, Agent, 自动化]
 
 从下面这张图可以看到，它先加载配置，然后尝试读取当前编排状态；如果发现状态目录还不存在，这是正常的首次运行场景。接着它会自动安装 **Stop Hook** 到 `.claude/settings.json` 中。
 
-<img src="../images/posts/story-automator-intro/02-stop-hook.png" alt="Story Automator 首次运行时自动安装 Stop Hook" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
+<img src="https://blog.terryso.dev/images/posts/story-automator-intro/02-stop-hook.png" alt="Story Automator 首次运行时自动安装 Stop Hook" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
 
 ---
 
@@ -65,7 +65,7 @@ tags: [BMAD, Story Automator, Claude Code, Agent, 自动化]
 
 下面这张图展示了一个很典型的场景：Epic 5、6、7 中一部分 Story 已完成，一部分仍然待办。工具会把这些状态直接展示出来，然后询问你要处理哪些 Story。
 
-<img src="../images/posts/story-automator-intro/08-story-selection.png" alt="Story Automator 根据 sprint 状态列出可处理的待办 Story" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
+<img src="https://blog.terryso.dev/images/posts/story-automator-intro/08-story-selection.png" alt="Story Automator 根据 sprint 状态列出可处理的待办 Story" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
 
 ---
 
@@ -81,7 +81,7 @@ tags: [BMAD, Story Automator, Claude Code, Agent, 自动化]
 - Story 7.1 “基于 SDK Pause Protocol 的用户接管机制” → **2 分 / Low**
 - Story 7.2 “--fast 模式” → **5 分 / Medium**
 
-<img src="../images/posts/story-automator-intro/03-complexity-matrix.png" alt="Story Automator 自动生成 Story 复杂度矩阵" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
+<img src="https://blog.terryso.dev/images/posts/story-automator-intro/03-complexity-matrix.png" alt="Story Automator 自动生成 Story 复杂度矩阵" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
 
 更关键的是，它不只给分，还给出**原因**：
 
@@ -102,7 +102,7 @@ tags: [BMAD, Story Automator, Claude Code, Agent, 自动化]
 
 接下来它会问你有没有**自定义指令**。
 
-<img src="../images/posts/story-automator-intro/04-custom-instructions.png" alt="Story Automator 询问是否添加自定义指令" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
+<img src="https://blog.terryso.dev/images/posts/story-automator-intro/04-custom-instructions.png" alt="Story Automator 询问是否添加自定义指令" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
 
 比如：
 
@@ -126,7 +126,7 @@ tags: [BMAD, Story Automator, Claude Code, Agent, 自动化]
 1. 是否跳过 `automate` 步骤（测试自动化）
 2. 最大并行会话数是多少
 
-<img src="../images/posts/story-automator-intro/05-execution-settings.png" alt="Story Automator 的执行设置界面" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
+<img src="https://blog.terryso.dev/images/posts/story-automator-intro/05-execution-settings.png" alt="Story Automator 的执行设置界面" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
 
 默认值是：
 
@@ -150,7 +150,7 @@ tags: [BMAD, Story Automator, Claude Code, Agent, 自动化]
 - **High**：同样以 Codex 为主
 - **Retro**：回顾阶段使用 Claude
 
-<img src="../images/posts/story-automator-intro/06-agent-selection.png" alt="Story Automator 基于复杂度推荐 Agent 组合" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
+<img src="https://blog.terryso.dev/images/posts/story-automator-intro/06-agent-selection.png" alt="Story Automator 基于复杂度推荐 Agent 组合" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
 
 从这个配置可以看出，它已经不是“调用一个模型”的层面了，而是在做**模型编排**。
 
@@ -174,7 +174,7 @@ tags: [BMAD, Story Automator, Claude Code, Agent, 自动化]
 
 当你确认后，Story Automator 会把这次运行配置保存下来。截图里展示的是一个名为 **all-claude** 的配置摘要：
 
-<img src="../images/posts/story-automator-intro/07-config-summary.png" alt="Story Automator 保存运行配置并生成摘要" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
+<img src="https://blog.terryso.dev/images/posts/story-automator-intro/07-config-summary.png" alt="Story Automator 保存运行配置并生成摘要" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
 
 摘要里写了几件事：
 
@@ -206,7 +206,7 @@ tags: [BMAD, Story Automator, Claude Code, Agent, 自动化]
 
 另外一个我觉得做得不错的点，是每个 Epic 跑完之后，它会顺手做一次复盘，把有用的信息补到 `project-context.md` 里。
 
-<img src="../images/posts/story-automator-intro/09-retro-project-context.png" alt="Epic 完成后会把复盘结果补充到 project-context.md" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
+<img src="https://blog.terryso.dev/images/posts/story-automator-intro/09-retro-project-context.png" alt="Epic 完成后会把复盘结果补充到 project-context.md" style="max-width: 90%; height: auto; display: block; margin: 20px auto;">
 
 所以我现在对它的看法很简单：
 
