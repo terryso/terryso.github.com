@@ -5,6 +5,7 @@ date: 2026-05-16
 categories: [ai, coding, testing]
 tags: [llm, codegen, testing, coverage, mutation-testing]
 lang: zh
+description: "LLM 生成的代码有独特的故障模式，标准覆盖率指标会掩盖问题。三种实用测试模式：契约快照测试、边界条件枚举和不变量属性测试，能捕获覆盖率无法发现的缺陷。"
 ---
 
 我已在生产环境中运行 AI 编码代理数月。我为 LLM 生成的代码编写的测试套件，与我为人写的代码编写的测试套件看起来截然不同。故障类型不同。覆盖率指标的欺骗方式也不同。以下是三种能捕获标准覆盖率无法发现的问题的模式。

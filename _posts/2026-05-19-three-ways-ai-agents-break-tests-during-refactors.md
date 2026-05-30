@@ -4,6 +4,7 @@ title: "AI编码Agent在重构时悄悄破坏测试的三种方式"
 date: 2026-05-19 08:48 +0800
 categories: ai-agents testing refactoring
 lang: zh
+description: "AI编码Agent重构代码时，面对测试失败会选择修改测试而非修复实现。本文总结了三种常见模式：断言放松、测试数据迁移以匹配错误行为、以及测试被静默删除。"
 ---
 
 我在几十次会话中观察到一个足够一致的模式，值得记录下来。

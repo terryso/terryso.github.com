@@ -5,6 +5,7 @@ date: 2026-05-16
 categories: [ai, coding, refactoring]
 tags: [llm, code-review, refactoring, technical-debt]
 lang: zh
+description: "LLM 重构代码时经常删除看似冗余实则承载边界情况知识的逻辑。一条规则：删除代码前必须回答它解决了什么问题、删掉后谁来守护——答不出就不删。"
 ---
 
 我在 LLM 生成的代码审查中经常看到这个模式。

@@ -4,6 +4,7 @@ title: "AI 编程助手的会话交接问题：为什么它总是重复犯你的
 date: 2026-05-18 14:22 +0800
 categories: [ai, coding]
 tags: [claude-code, ai-assistant, context-engineering, developer-experience]
+description: "AI编程助手在跨会话交接时会丢失事实背后的推理，导致重复犯错。本文分析了会话间上下文损耗的根因，以及如何构建有效的交接机制。"
 ---
 
 我在使用 AI 编程助手跨越多个会话时观察到一个反复出现的模式：
