@@ -953,6 +953,10 @@ sidebar p {
 .entry {
   z-index: 4;
 }
+.entry img {
+  max-width: 100%;
+  height: auto;
+}
 .entry aside {
   border-style: dashed;
   border-width: 0.05em;
