@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" font-family="'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC','Microsoft YaHei',ui-sans-serif,system-ui,-apple-system,sans-serif" text-rendering="geometricPrecision">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="0.55" stop-color="#111c33"/>
+      <stop offset="1" stop-color="#1b1340"/>
+    </linearGradient>
+    <linearGradient id="loop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.40" r="0.45">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.30"/>
+      <stop offset="0.6" stop-color="#a78bfa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#ffffff" fill-opacity="0.04"/>
+    </pattern>
+    <marker id="ah" viewBox="0 0 12 12" refX="5" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto">
+      <path d="M0,0 L12,6 L0,12 L3.5,6 Z" fill="#a78bfa"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#dots)"/>
+  <circle cx="400" cy="175" r="185" fill="url(#glow)"/>
+
+  <!-- rotating loop ring: arc the long way around, gap at top, arrowhead at end -->
+  <path d="M 465 110 A 92 92 0 1 1 335 110" fill="none" stroke="url(#loop)" stroke-width="8" stroke-linecap="round" marker-end="url(#ah)" opacity="0.95"/>
+  <circle cx="400" cy="175" r="92" fill="none" stroke="#a78bfa" stroke-opacity="0.12" stroke-width="1"/>
+
+  <!-- center: code braces + label (safely inside, away from ring edge) -->
+  <text x="400" y="170" text-anchor="middle" dominant-baseline="middle" font-size="56" font-weight="700" fill="#e2e8f0" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">{ }</text>
+  <text x="400" y="206" text-anchor="middle" dominant-baseline="middle" font-size="12.5" fill="#7dd3fc" letter-spacing="1">PYTHON · 确定性编排</text>
+
+  <!-- ===== LLM nodes: clearly OUTSIDE the ring, connected by a dot + line ===== -->
+  <!-- right touchpoint (3 o'clock) -->
+  <line x1="492" y1="175" x2="552" y2="175" stroke="#a78bfa" stroke-width="1.5" stroke-opacity="0.7"/>
+  <circle cx="492" cy="175" r="5" fill="#0b1220" stroke="#a78bfa" stroke-width="2"/>
+  <rect x="552" y="157" width="128" height="36" rx="18" fill="#1e1b4b" stroke="#a78bfa" stroke-width="1.2"/>
+  <circle cx="572" cy="175" r="3.5" fill="#c4b5fd"/>
+  <text x="582" y="175" dominant-baseline="middle" font-size="13.5" fill="#ddd6fe" font-weight="600">dev · LLM</text>
+
+  <!-- left touchpoint (9 o'clock) -->
+  <line x1="308" y1="175" x2="248" y2="175" stroke="#a78bfa" stroke-width="1.5" stroke-opacity="0.7"/>
+  <circle cx="308" cy="175" r="5" fill="#0b1220" stroke="#a78bfa" stroke-width="2"/>
+  <rect x="120" y="157" width="128" height="36" rx="18" fill="#1e1b4b" stroke="#a78bfa" stroke-width="1.2"/>
+  <circle cx="140" cy="175" r="3.5" fill="#c4b5fd"/>
+  <text x="150" y="175" dominant-baseline="middle" font-size="13.5" fill="#ddd6fe" font-weight="600">review · LLM</text>
+
+  <!-- top-right tagline -->
+  <text x="768" y="52" text-anchor="end" dominant-baseline="middle" font-size="13" fill="#64748b" font-style="italic">No LLM in the control loop</text>
+
+  <!-- top-left badge -->
+  <rect x="32" y="34" width="116" height="30" rx="15" fill="#22d3ee" fill-opacity="0.12" stroke="#22d3ee" stroke-opacity="0.55"/>
+  <text x="90" y="49" text-anchor="middle" dominant-baseline="middle" font-size="13" font-weight="700" fill="#67e8f9" letter-spacing="0.5">BMAD 6.10</text>
+
+  <!-- title -->
+  <text x="400" y="338" text-anchor="middle" dominant-baseline="middle" font-size="40" font-weight="800" fill="#f8fafc" letter-spacing="0.5">BMAD Loop</text>
+  <text x="400" y="372" text-anchor="middle" dominant-baseline="middle" font-size="15.5" fill="#94a3b8">把开发循环的控制权，交还给确定性代码</text>
+  <line x1="340" y1="392" x2="460" y2="392" stroke="url(#loop)" stroke-width="2" stroke-linecap="round"/>
+</svg>

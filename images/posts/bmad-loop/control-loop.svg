@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480" font-family="'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC','Microsoft YaHei',ui-sans-serif,system-ui,-apple-system,sans-serif" text-rendering="geometricPrecision">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L2.5,5 Z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrUp" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L2.5,5 Z" fill="#cbd5e1"/>
+    </marker>
+  </defs>
+
+  <!-- outer card -->
+  <rect x="0.5" y="0.5" width="799" height="479" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+
+  <!-- ===== Control loop card ===== -->
+  <rect x="48" y="40" width="704" height="118" rx="14" fill="#eff6ff" stroke="#bfdbfe"/>
+  <!-- python dot -->
+  <circle cx="76" cy="68" r="6" fill="#2563eb"/>
+  <text x="90" y="68" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1e3a8a">控制环 · 确定性 Python（这里没有 LLM）</text>
+
+  <!-- steps row -->
+  <text x="400" y="118" text-anchor="middle" font-size="15" fill="#1e40af" font-weight="600">选 story  →  分派  →  等事件  →  校验  →  决定下一步</text>
+  <text x="400" y="142" text-anchor="middle" font-size="12.5" fill="#475569">同样的 sprint 跑两次，调度路径一致 · 零 token · 可打断点</text>
+
+  <!-- connectors down to LLM sessions -->
+  <line x1="218" y1="170" x2="218" y2="258" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="582" y1="170" x2="582" y2="258" stroke="#94a3b8" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="400" y1="170" x2="400" y2="258" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <!-- middle label -->
+  <rect x="300" y="188" width="200" height="28" rx="14" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="400" y="202" text-anchor="middle" dominant-baseline="middle" font-size="13" fill="#64748b">只读写文件 · 不抓屏</text>
+
+  <!-- ===== two LLM session cards ===== -->
+  <!-- dev -->
+  <rect x="48" y="262" width="340" height="128" rx="14" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <circle cx="76" cy="292" r="6" fill="#7c3aed"/>
+  <text x="90" y="292" dominant-baseline="middle" font-size="16" font-weight="700" fill="#5b21b6">dev 会话</text>
+  <text x="356" y="292" text-anchor="end" dominant-baseline="middle" font-size="12" fill="#7c3aed" font-weight="600">LLM</text>
+  <line x1="64" y1="312" x2="372" y2="312" stroke="#ddd6fe"/>
+  <text x="68" y="336" dominant-baseline="middle" font-size="13.5" fill="#3f3d56">• 一次性 · 全新上下文</text>
+  <text x="68" y="358" dominant-baseline="middle" font-size="13.5" fill="#3f3d56">• 写代码、写测试，干完即弃</text>
+
+  <!-- review -->
+  <rect x="412" y="262" width="340" height="128" rx="14" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <circle cx="440" cy="292" r="6" fill="#7c3aed"/>
+  <text x="454" y="292" dominant-baseline="middle" font-size="16" font-weight="700" fill="#5b21b6">review 会话</text>
+  <text x="720" y="292" text-anchor="end" dominant-baseline="middle" font-size="12" fill="#7c3aed" font-weight="600">LLM</text>
+  <line x1="428" y1="312" x2="736" y2="312" stroke="#ddd6fe"/>
+  <text x="432" y="336" dominant-baseline="middle" font-size="13.5" fill="#3f3d56">• 不继承 dev 的上下文</text>
+  <text x="432" y="358" dominant-baseline="middle" font-size="13.5" fill="#3f3d56">• 对抗式审查，专门挑刺</text>
+
+  <!-- feedback arrows back up (dashed) -->
+  <path d="M 218 262 C 218 222, 400 210, 400 188" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrUp)" opacity="0"/>
+  <text x="400" y="416" text-anchor="middle" font-size="12.5" fill="#64748b">dev / review 的产物与状态，以 result.json + 事件文件回写给编排器</text>
+
+  <!-- legend -->
+  <g transform="translate(48,438)">
+    <rect x="0" y="0" width="14" height="14" rx="3" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="20" y="8" dominant-baseline="middle" font-size="12" fill="#475569">Python（确定性）</text>
+    <rect x="160" y="0" width="14" height="14" rx="3" fill="#f5f3ff" stroke="#c4b5fd"/>
+    <text x="180" y="8" dominant-baseline="middle" font-size="12" fill="#475569">LLM（创意工位）</text>
+  </g>
+</svg>
