@@ -2,7 +2,7 @@
 layout: post
 title: "AI Native 的标准是什么？我和 Hermes 的一次真实协作"
 description: "AI Native 的标准不是"离开电脑"本身，而是工作变成一段随时可以继续的协作。从一次排查问题，聊到知识分层、自动推进任务、再到团队知识库——记录我和 Agent Hermes 的一场真实协作。"
-date: 2026-07-17 13:00:00 +0800
+date: 2026-07-16 13:00:00 +0800
 categories: [AI, AI Native]
 tags: [AI Native, Agent, Hermes, 知识管理, 人机协作]
 ---
