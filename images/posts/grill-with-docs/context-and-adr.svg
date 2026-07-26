@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" role="img" aria-labelledby="title desc" font-family="'PingFang SC','Hiragino Sans GB','Noto Sans CJK SC','Microsoft YaHei',ui-sans-serif,system-ui,-apple-system,sans-serif">
+  <title id="title">context.md 和 ADR 的职责分工</title>
+  <desc id="desc">context.md 保存术语、定义和关系；ADR 保存难以撤回的决定、取舍和影响。两者一起帮助人和 AI 理解代码。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 L2.5,5 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="898" height="518" rx="20" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="56" y="62" font-size="22" font-weight="700" fill="#0f172a">两份文档，回答两种不同的问题</text>
+  <text x="56" y="91" font-size="14" fill="#64748b">术语表让大家知道“这是什么”；决策记录让后来的人知道“当时为什么这样做”。</text>
+
+  <g>
+    <rect x="56" y="136" width="342" height="282" rx="18" fill="#fff" stroke="#a7f3d0"/>
+    <rect x="80" y="160" width="116" height="32" rx="8" fill="#d1fae5"/>
+    <text x="138" y="182" text-anchor="middle" font-size="15" font-weight="700" fill="#065f46">context.md</text>
+    <text x="80" y="228" font-size="18" font-weight="700" fill="#0f172a">定义共同语言</text>
+    <text x="80" y="262" font-size="14" fill="#334155">• 核心实体与术语</text>
+    <text x="80" y="292" font-size="14" fill="#334155">• 状态、关系与边界</text>
+    <text x="80" y="322" font-size="14" fill="#334155">• 能区分含义的例子</text>
+    <line x1="80" y1="350" x2="374" y2="350" stroke="#d1d5db"/>
+    <text x="80" y="382" font-size="13.5" fill="#047857">回答：这个词在项目里是什么意思？</text>
+  </g>
+
+  <g>
+    <rect x="502" y="136" width="342" height="282" rx="18" fill="#fff" stroke="#c4b5fd"/>
+    <rect x="526" y="160" width="90" height="32" rx="8" fill="#ede9fe"/>
+    <text x="571" y="182" text-anchor="middle" font-size="15" font-weight="700" fill="#5b21b6">ADR</text>
+    <text x="526" y="228" font-size="18" font-weight="700" fill="#0f172a">留下决策背景</text>
+    <text x="526" y="262" font-size="14" fill="#334155">• 当时面对的选择</text>
+    <text x="526" y="292" font-size="14" fill="#334155">• 取舍与不可逆后果</text>
+    <text x="526" y="322" font-size="14" fill="#334155">• 哪些实现不能随意“优化”</text>
+    <line x1="526" y1="350" x2="820" y2="350" stroke="#d1d5db"/>
+    <text x="526" y="382" font-size="13.5" fill="#6d28d9">回答：为什么当时选择这条路？</text>
+  </g>
+
+  <path d="M398 277 H474" stroke="#64748b" stroke-width="3" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <circle cx="436" cy="277" r="32" fill="#e2e8f0" stroke="#cbd5e1"/>
+  <text x="436" y="272" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">相互</text>
+  <text x="436" y="291" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">参照</text>
+
+  <path d="M226 418 V450 H436" fill="none" stroke="#0f766e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M674 418 V450 H436" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="291" y="432" width="290" height="58" rx="14" fill="#0f172a"/>
+  <text x="436" y="457" text-anchor="middle" font-size="16" font-weight="700" fill="#f8fafc">人、AI 与代码</text>
+  <text x="436" y="478" text-anchor="middle" font-size="13" fill="#cbd5e1">读到同一份定义与背景</text>
+</svg>
