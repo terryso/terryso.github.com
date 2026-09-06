@@ -5,6 +5,7 @@ description: "Anthropic 首次公开内部数据：80% 以上的代码由 Claude
 date: 2026-06-07 18:00 +0800
 categories: [AI, 前沿观察]
 tags: [Anthropic, 递归自我改进, Claude, AI安全, AI工程化]
+canonical: https://terryso.dev/anthropic-recursive-self-improve/
 ---
 
 > 原文：[When AI builds itself — Anthropic Institute](https://www.anthropic.com/institute/recursive-self-improvement)

@@ -5,6 +5,7 @@ date: 2026-04-29 16:00:00 +0800
 categories: tech
 description: "详解 SwiftWork 的 Tool Card 系统：ToolRenderable 协议如何定义工具渲染契约、ToolRendererRegistry 如何做注册查找、5 个内置渲染器的差异，以及 ToolResultContentView 的 diff 检测。"
 tags: [AI, Swift, Agent, macOS, SwiftUI, 工具, 可视化, 开源]
+canonical: https://terryso.dev/swiftwork-3-tool-card/
 ---
 
 > 本文是「深入 SwiftWork」系列第 3 篇。[系列目录见这里](/blog/swiftwork-macos-agent-workbench)。

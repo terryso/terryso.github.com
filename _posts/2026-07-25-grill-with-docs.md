@@ -5,6 +5,7 @@ description: "Matt Pocock 在一段 15 分钟的演示中解释了为什么用 /
 date: 2026-07-25 16:17:30 +0800
 categories: [AI, 软件工程]
 tags: [AI, Agent, 文档, DDD, 软件设计]
+canonical: https://terryso.dev/ubiquitous-language-first/
 ---
 
 ![开发者与抽象 AI 围绕术语表和决策树协作](/images/posts/grill-with-docs/cover.png)

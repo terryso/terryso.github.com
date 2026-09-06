@@ -5,6 +5,7 @@ description: "BMAD-METHOD 通过专门的 AI 代理模拟完整敏捷开发团�
 date: 2025-07-19 08:00:00 +0800
 categories: [AI, BMAD, 开发效率]
 tags: [BMAD-METHOD, Vibe Coding, 敏捷开发, Claude Code]
+canonical: https://terryso.dev/bmad-method-intro/
 ---
 
 ## 你还在为组建敏捷团队而苦恼吗？

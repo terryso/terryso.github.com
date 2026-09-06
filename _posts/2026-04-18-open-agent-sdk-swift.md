@@ -5,6 +5,7 @@ date: 2026-04-18 15:00:00 +0800
 categories: tech
 description: "Open Agent SDK 是一个开源的 Swift Agent SDK，支持完整的 Agent Loop、34 个内置工具、多 LLM 提供商、MCP 集成、子 Agent 协作和会话持久化，让你用原生 Swift 并发在进程内构建 AI 驱动的应用。"
 tags: [AI, Swift, Agent, SDK, MCP, 开源]
+canonical: https://terryso.dev/open-agent-sdk-swift/
 ---
 
 如果你是一名 Swift 开发者，想要在自己的 macOS 应用中集成 AI Agent 能力，选择并不多。大多数 Agent 框架都是 Python 或 TypeScript 的，Swift 生态几乎没有成熟的解决方案。[Open Agent SDK (Swift)](https://github.com/terryso/open-agent-sdk-swift) 正是为了填补这个空白而生的。

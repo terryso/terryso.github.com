@@ -5,6 +5,7 @@ date: 2026-04-26 16:00:00 +0800
 categories: tech
 description: "SwiftWork 是一个 macOS 原生 AI Agent 工作台，基于 Open Agent SDK 构建，提供 Agent 执行的实时可观测性。这篇文章介绍项目动机、事件驱动架构和核心数据流。"
 tags: [AI, Swift, Agent, macOS, SwiftUI, 可视化, 开源]
+canonical: https://terryso.dev/swiftwork-0-swiftui-agent/
 ---
 
 > 本文是「深入 SwiftWork」系列第 0 篇。[系列目录见这里](/blog/swiftwork-macos-agent-workbench)。

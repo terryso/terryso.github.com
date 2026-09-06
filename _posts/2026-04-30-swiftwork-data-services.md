@@ -5,6 +5,7 @@ date: 2026-04-30 16:00:00 +0800
 categories: tech
 description: "详解 SwiftWork 的数据层和服务组件：SwiftData 模型设计、AppStateManager 状态恢复机制、MarkdownRenderer 的 Visitor 模式实现、Splash 代码高亮、Keychain API Key 管理和自动标题生成。"
 tags: [AI, Swift, Agent, macOS, SwiftUI, SwiftData, Markdown, 开源]
+canonical: https://terryso.dev/swiftwork-4-data-services/
 ---
 
 > 本文是「深入 SwiftWork」系列第 4 篇（完结篇）。[系列目录见这里](/blog/swiftwork-macos-agent-workbench)。

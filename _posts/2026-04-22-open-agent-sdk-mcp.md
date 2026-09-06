@@ -5,6 +5,7 @@ date: 2026-04-22 18:00:00 +0800
 categories: tech
 description: "分析 Open Agent SDK 的 MCP 集成：五种传输配置、MCPClientManager 连接流程、运行时动态管理、MCP 资源系统、InProcessMCPServer 零开销模式，让 Agent 通过标准协议接入任意外部工具。"
 tags: [AI, Swift, Agent, SDK, MCP, 开源]
+canonical: https://terryso.dev/open-agent-sdk-3/
 ---
 
 > 本文是「深入 Open Agent SDK (Swift)」系列第三篇。[系列目录见这里](/blog/open-agent-sdk-swift)。

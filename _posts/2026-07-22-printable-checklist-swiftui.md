@@ -5,6 +5,7 @@ date: 2026-07-22 17:30:00 +0800
 categories: tech
 description: "PrintableCheckList 是一款本地优先的 iOS 可打印清单 App。这次重写保留了旧版数据迁移、编辑、预览和打印，又加入 BYOK AI 生成、联网查证与可选 iCloud 同步。"
 tags: [Swift, SwiftUI, iOS, AI, iCloud, 打印, 开源]
+canonical: https://terryso.dev/swiftui-shanyin-rewrite/
 ---
 
 2015 年，我做过一款很小的 iOS App，中文名叫「闪印」。它只解决一件事：把旅行、采购或工作清单整理好，预览，然后打印到纸上。

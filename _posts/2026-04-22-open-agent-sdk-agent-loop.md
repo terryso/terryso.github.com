@@ -5,6 +5,7 @@ date: 2026-04-22 16:00:00 +0800
 categories: tech
 description: "分析 Open Agent SDK 的 Agent Loop 状态机：阻塞式 prompt() 和流式 stream() 两条路径、工具并发/串行分治、自动压缩、微压缩、预算控制、协作取消，看一个 Swift Agent 怎样在进程内跑完整个循环。"
 tags: [AI, Swift, Agent, SDK, 架构, 开源]
+canonical: https://terryso.dev/open-agent-sdk-1/
 ---
 
 > 本文是「深入 Open Agent SDK (Swift)」系列第一篇。[系列目录见这里](/blog/open-agent-sdk-swift)。

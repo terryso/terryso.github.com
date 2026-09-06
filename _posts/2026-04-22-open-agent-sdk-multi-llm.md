@@ -5,6 +5,7 @@ date: 2026-04-22 20:30:00 +0800
 categories: tech
 description: "分析 Open Agent SDK 的多 LLM 提供商支持（LLMClient 协议、AnthropicClient、OpenAIClient 适配层）、运行时模型切换与计费、Thinking/Effort 配置、Skills 系统与工具限制，以及预算控制、中断、动态权限等运行时控制机制。"
 tags: [AI, Swift, Agent, SDK, LLM, 开源]
+canonical: https://terryso.dev/open-agent-sdk-6/
 ---
 
 > 本文是「深入 Open Agent SDK (Swift)」系列第六篇（完结篇）。[系列目录见这里](/blog/open-agent-sdk-swift)。

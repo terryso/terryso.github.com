@@ -5,6 +5,7 @@ date: 2026-04-27 16:00:00 +0800
 categories: tech
 description: "详解 SwiftWork 的 SDK 集成层设计：AgentBridge 如何消费 AsyncStream、EventMapper 如何做类型映射、ToolContent 如何配对工具事件，以及事件持久化和内存管理策略。"
 tags: [AI, Swift, Agent, macOS, SwiftUI, SDK, 开源]
+canonical: https://terryso.dev/swiftwork-1-sdk-integration/
 ---
 
 > 本文是「深入 SwiftWork」系列第 1 篇。[系列目录见这里](/blog/swiftwork-macos-agent-workbench)。

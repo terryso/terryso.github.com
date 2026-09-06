@@ -5,6 +5,7 @@ description: "Codex CLI 默认只有一套本地状态，但可以用独立的 C
 date: 2026-07-26 10:00:00 +0800
 categories: [AI, 开发者工具]
 tags: [Codex CLI, OpenAI, 终端, 账号隔离, 开发工具]
+canonical: https://terryso.dev/two-codex-cli-accounts/
 ---
 
 ![两套独立的 Codex CLI 环境：各自的终端、状态目录与锁定边界，彼此没有连接](/images/posts/codex-cli-separate-accounts/isolated-environments.png)

@@ -5,6 +5,7 @@ description: "terry.so 博客正式开源。不是套了个深色主题就说终
 date: 2026-06-07 10:00:00 +0800
 categories: [开源, 博客]
 tags: [开源, TanStack Start, RAG, pgvector, Lovable, 终端风, 博客]
+canonical: https://terryso.dev/open-source-terminal-blog/
 ---
 
 > 仓库地址：[github.com/terryso/hack-buffer](https://github.com/terryso/hack-buffer)

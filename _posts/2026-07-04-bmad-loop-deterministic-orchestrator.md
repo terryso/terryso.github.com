@@ -5,6 +5,7 @@ description: "BMAD Loop 不是又一个 skill，而是一段纯 Python 编排器
 date: 2026-07-04 10:00:00 +0800
 categories: [AI, BMAD, 开发效率]
 tags: [BMAD, BMAD Loop, Claude Code, Agent 编排, 自动化, 确定性循环]
+canonical: https://terryso.dev/bmad-loop-deterministic/
 ---
 
 如果你看过我之前那篇 [Story Automator 上手实录](/blog/bmad-story-automator-intro)，应该还记得我最后的结论：

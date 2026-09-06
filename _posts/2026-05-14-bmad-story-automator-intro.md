@@ -5,6 +5,7 @@ description: "基于一次真实的 /bmad-story-automator 使用过程，说明 
 date: 2026-05-14 10:25:36 +0800
 categories: [AI, BMAD, 开发效率]
 tags: [BMAD, Story Automator, Claude Code, Agent, 自动化]
+canonical: https://terryso.dev/bmad-story-automator/
 ---
 
 如果你已经习惯通过 BAMD 写代码，接下来真正耗时间的，往往不是“写”，而是“协调”。

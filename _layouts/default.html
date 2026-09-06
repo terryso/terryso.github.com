@@ -23,7 +23,11 @@
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel="stylesheet" type="text/css">
     -->
+    {% if page.canonical %}
+    <link rel="canonical" href="{{ page.canonical }}">
+    {% else %}
     <link rel="canonical" href="https://terryso.dev{{ page.url }}">
+    {% endif %}
     <meta name="google-site-verification" content="4b2gG2_kr5STLh0RhE34iPvU59o591CoG9N6iYOazvw" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 

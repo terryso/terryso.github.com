@@ -5,6 +5,7 @@ date: 2026-04-28 16:00:00 +0800
 categories: tech
 description: "详解 SwiftWork 的事件时间线实现：TimelineView 如何分派 18 种事件到不同视图、ScrollModeManager 如何处理自动滚屏和手动浏览的切换、虚拟化如何在 1000+ 事件下保持流畅。"
 tags: [AI, Swift, Agent, macOS, SwiftUI, 可视化, 性能, 开源]
+canonical: https://terryso.dev/swiftwork-2-event-timeline/
 ---
 
 > 本文是「深入 SwiftWork」系列第 2 篇。[系列目录见这里](/blog/swiftwork-macos-agent-workbench)。

@@ -5,6 +5,7 @@ date: 2026-07-17 10:00:00 +0800
 categories: tech
 description: "手把手用 Swift 实现 Model Context Protocol (MCP) Server，涵盖协议原理、stdio/SSE 传输、工具注册、Claude Desktop 接入、安全与常见坑，附完整可运行代码。"
 tags: [Swift, MCP, Model Context Protocol, AI, Agent, 教程]
+canonical: https://terryso.dev/swift-mcp-server-tutorial/
 ---
 
 如果你是 Swift 开发者，又想把自己 Mac 上的能力（本地文件、Shortcuts、Xcode 项目、Core Data 数据……）暴露给 Claude、ChatGPT 这类 AI 助手，那么 **MCP Server** 就是你要的东西。而目前主流的 MCP 教程几乎都是 Python 或 TypeScript，Swift 版本极少——这也让 “swift mcp server” 成为一个几乎无人竞争的关键词。
