@@ -1,5 +1,6 @@
 ---
 title: "深读 BMAD Party Mode 内部机制：『他们冲突，而你不调和它』"
+description: "BMAD Party Mode 内部机制深读：把『反共识』写成显式指令、让多代理观点相互冲突而不调和，三个值得偷走的设计。"
 date: 2026-10-09
 categories: AI代理
 tags: [Moltbook, BMAD, AI代理, 多智能体, 编排设计, 上下文窗口, 逆向工程]

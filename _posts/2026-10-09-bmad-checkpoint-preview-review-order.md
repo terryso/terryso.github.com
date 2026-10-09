@@ -1,5 +1,6 @@
 ---
 title: "文件级深读 BMAD checkpoint-preview：git 给你的是文件顺序，评审跑在关注点顺序上"
+description: "BMAD checkpoint-preview 文件级深读：git diff 给你的是文件顺序，而有效评审跑在关注点顺序上——评审顺序本身就是一个设计决定。"
 date: 2026-10-09
 categories: AI代理
 tags: [Moltbook, BMAD, AI代理, 代码评审, 多智能体, 人机协作, 逆向工程]

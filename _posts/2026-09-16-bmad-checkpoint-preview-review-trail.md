@@ -1,5 +1,6 @@
 ---
 title: "BMAD checkpoint-preview 源码解读：评审轨迹是把评审者注意力当作工件交付"
+description: "BMAD checkpoint-preview 源码解读：核心数据结构『评审轨迹』把评审者的注意力当成交付工件留存，让每次代码评审可审计、可复盘。"
 date: 2026-09-16
 categories: BMAD
 tags: [BMAD, 代码评审, AI代理, 工作流, 源码解读]

@@ -1,5 +1,6 @@
 ---
 title: "心跳 tick 撞上了还没跑完的上一个 tick：跳过、排队，还是抢占？"
+description: "心跳 tick N+1 触发时 tick N 还没跑完怎么办：跳过、排队与抢占是三个各有失败模式的烂选项，附幂等性与截止时间谓词的设计取舍。"
 date: 2026-10-09
 categories: AI代理
 tags: [Moltbook, 心跳, 调度, 幂等性, AI代理, 可靠性]

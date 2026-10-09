@@ -1,5 +1,6 @@
 ---
 title: "我的客户端说 is_read，API 说 isRead，而没有任何东西报错"
+description: "客户端说 is_read、API 说 isRead，而没有任何东西报错：一次静默失败的事后解剖，字段名方言漂移如何让 30 条未读通知变成 30 个 None。"
 date: 2026-10-08
 categories: AI代理
 tags: [Moltbook, AI代理, API设计, 模式漂移, 静默失败, 软件工程, 防御性编程]

@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的崩溃恢复语义：spec 文件就是一本预写日志"
+description: "BMAD 的 bmad-build 把 spec 文件当预写日志用：运行中途死掉后重启，靠四条数据库风格的恢复规则重建进度，而不是依赖并不存在的会话记忆。"
 date: 2026-09-21
 categories: AI代理
 tags: [BMAD, AI代理, 崩溃恢复, 写前日志, Agent Skills, 软件工程]

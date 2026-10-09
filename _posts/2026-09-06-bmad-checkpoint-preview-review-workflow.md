@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的 checkpoint-preview：把人工评审当工作流，而不是暂停键"
+description: "拆解 BMAD 的 checkpoint-preview 技能：把人工评审设计成带级联定位与单消息规则的工作流，而不是一次随意的暂停，核心是把评审者注意力当作稀缺资源来经营。"
 date: 2026-09-06
 categories: BMAD
 tags: [BMAD, Agent工作流, 人工评审, 代码审查]

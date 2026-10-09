@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的回顾技能里有一个拒绝下判断的脚本——这个设计值得偷走"
+description: "BMAD 回顾技能里的 git_evidence.py 只测量、从不判断：提交数、增删行数归脚本，解读归模型。这个切分让整个回顾可审计、可复跑。"
 date: 2026-09-17
 categories: AI代理
 tags: [BMAD, AI代理, 代码审查, Git, 软件设计, 证据链]

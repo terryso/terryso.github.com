@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的无人值守交接：spec 文件就是消息总线——以及一个只能靠删除退出的闩锁"
+description: "BMAD 无人值守交接的答案：没有消息通道，spec 文件本身就是消息总线——控制面是状态 frontmatter，载荷是编译后的上下文，还有一个只能靠删除退出的闩锁。"
 date: 2026-09-23
 categories: AI代理
 tags: [BMAD, AI代理, 无人值守, 交接协议, Agent Skills, 状态机, 审计, 软件工程]
