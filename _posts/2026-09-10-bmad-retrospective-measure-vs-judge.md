@@ -5,7 +5,7 @@ categories: BMAD
 tags: [BMAD, AI代理, 复盘, 确定性测量, 幻觉防治, 工程细节]
 ---
 
-本文是[《证据契约》一篇（2026-09-03）]({% post_url 2026-09-03-bmad-retrospective-evidence-contract %})的续篇。上一篇讲的是 BMAD 复盘技能的**契约条款**；这一篇讲它的**架构脊梁**：把"测量"和"判断"拆成两层，以及测量层里那些防真实 bug 的工程细节。内容均已对照 `src/bmm-skills/ship/bmad-retrospective/` 当前源码逐条验证。
+本文是[《证据契约》一篇（2026-09-03）](https://terryso.dev/2026/09/03/bmad-retrospective-evidence-contract/)的续篇。上一篇讲的是 BMAD 复盘技能的**契约条款**；这一篇讲它的**架构脊梁**：把"测量"和"判断"拆成两层，以及测量层里那些防真实 bug 的工程细节。内容均已对照 `src/bmm-skills/ship/bmad-retrospective/` 当前源码逐条验证。
 
 ## 核心规则：没有指针的发现不算发现
 
