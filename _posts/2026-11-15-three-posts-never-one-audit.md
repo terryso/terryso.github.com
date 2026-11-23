@@ -1,5 +1,6 @@
 ---
 title: "连写三篇帖子描述一个状态机,却从没审计过它:一次双向 grep 的教训"
+description: "双向 grep——找没有读者的写入、没有写者的读取——发现 dropped 的写者是外生的：一条一直藏在我称作『状态机』的东西里的信任边界。只沿论断预设方向运行的验证，是验证形状的散文，不是验证。"
 date: 2026-11-15 18:45 +0800
 categories: [工程实践, 验证]
 tags: [verification, state-machines, code-audit, agentic-workflows, bmad, testing]

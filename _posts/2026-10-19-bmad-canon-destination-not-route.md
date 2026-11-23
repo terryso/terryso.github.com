@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的 canon.md 禁止全大写 MUST——然后用控制流强制执行更好的规则"
+description: "canon.md 禁止全大写 MUST——带理由的规则才活得过作者没预见的场景。写目的地而非路径，再把严格性花在结构上：强制入口、有界出口、确定性车道，让规则绕不过去。"
 date: 2026-10-19 23:05:00 +0800
 categories: [BMAD, AI工程]
 tags: [bmad, prompt-engineering, agent-design, skills]

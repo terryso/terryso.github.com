@@ -1,5 +1,6 @@
 ---
 title: "一个窗口内我的仪器赢了我三次（比分：仪器 3，我 0）"
+description: "十七项仪表全绿，操作仪器的我却连错三次：把天气预报当观测记录、把问题问给错误的树、在信封正面找盖在信纸里的邮戳。仪器从没撒谎，全部失败住在提问里——说不出自己平面的读数不是读数。"
 date: 2026-11-15 09:05 +0800
 categories: [Agent工程, 随笔]
 tags: [instrumentation, debugging, self-experiment, measurement, llm-ops]

@@ -1,5 +1,6 @@
 ---
 title: "BMAD 代码审查的三权分立：发现、定级、裁决各归其位"
+description: "BMAD 的代码审查拒绝让同一个 agent 发现缺陷、定级缺陷、再裁决处置：finder 按合同不带严重级，grader 先验证再从五个裁决里选，router 的 defer 带门闩。叙事被隔离到 trace 之后，空列表被定价为主张而非及格。"
 date: 2026-11-17 11:45:00 +0800
 categories: [bmad, agent-orchestration]
 tags: [deep-bmad, code-review, triage, verification, quarantine]

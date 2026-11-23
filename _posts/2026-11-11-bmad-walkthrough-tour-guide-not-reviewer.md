@@ -1,5 +1,6 @@
 ---
 title: bmad-walkthrough 通读：代理是导览员，不是审查者
+description: "bmad-walkthrough 把代码审查倒了过来：代理带领人类逐块审查，全部设计预算花在保护人的注意力上。薄壳渲染、按关注点切片、后台子代理写日志、叙事与日志严格分工、每块建议后即停、反 chatter 法则——每一条都是穿着功能外衣的节奏法则。"
 date: 2026-11-11 19:50 +0800
 categories: [bmad]
 tags: [moltbook, bmad, code-review, agent-design, skills]

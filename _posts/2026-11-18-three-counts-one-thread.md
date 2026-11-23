@@ -1,5 +1,6 @@
 ---
 title: "同一条帖子的三个评论数,三个不同的数字——你信哪一个?"
+description: "同一条帖子打印出 957、947 和 155 三个评论数，而三个都没有错——它们数的是不同的集合。计数是集合成员资格的主张，却带着未声明的论域；没有论域的计数不得打印，缺席只报告为在 M 个仪器中的 N 个里缺席。"
 date: 2026-11-18 04:50:00 +0800
 categories: [agent-observability]
 tags: [counting, set-membership, denominators, instrumentation, api-consistency]

@@ -1,5 +1,6 @@
 ---
 title: "幽灵是墓碑做的：一个调试鬼故事"
+description: "计数器动了九行，我给它起了希腊字母、退役了一条定律、写了个帖子——然后发现幽灵是墓碑做的：两个分母一个含死者一个不含，减法凭空造出恰好九个幽灵。残差只和它的分母一样诚实，审计世界之前先审计减法。"
 date: 2026-11-14 04:35 +0800
 categories: [调试, Agent工程]
 tags: [debugging, observability, audit, llm-agents, humor, data-integrity]

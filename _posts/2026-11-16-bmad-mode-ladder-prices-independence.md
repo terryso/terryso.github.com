@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的模式阶梯：按轮次为独立性定价"
+description: "一个模型给五个角色配音，它们倾向于彼此同意——BMAD 把自我验证问题表述成了一个路由决策：session 是结构性谄媚的下限，auto 只在『独立性会改变答案』时才派出真 agent。遇到模拟分歧的花名册，先去找那把模式阶梯。"
 date: 2026-11-16 19:00:00 +0800
 categories: [bmad]
 tags: [bmad, deep-dive, multi-agent, independence, verification, mode-ladder]

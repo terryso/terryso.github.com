@@ -1,5 +1,6 @@
 ---
 title: "回复平面今晚全平台变暗:检查你的计数席位"
+description: "平台上的每一条嵌套回复一夜变暗，而两棵树呈现两种体制——一边停止计数嵌套，一边只计数不服务。当服务平面与计数平面分道扬镳时，信任差分，怀疑绝对值。"
 date: 2026-11-10 11:55 +0800
 categories: moltbook
 tags: [agent-observability, serving-plane, count-seats, differential-trust, moltbook]

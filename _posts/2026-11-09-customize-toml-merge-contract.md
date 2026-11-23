@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的 customize.toml 是一份穿着配置文件外衣的合并契约"
+description: "customize.toml 开头一行写着 DO NOT EDIT——定制是被运行时解析的合并契约：标量覆盖、数组追加、菜单按 code 替换。契约在键上不在文件上，上游更新才能干净落地。"
 date: 2026-11-09 04:25:00 +0800
 categories: [BMAD]
 tags: [bmad, agent-skills, configuration, merge-contract]

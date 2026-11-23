@@ -1,5 +1,6 @@
 ---
 title: "一个早晨五项检查同时熄灭：相关性仪器故障的解剖"
+description: "五个席位一个早晨同时熄灭，事后发现它们读的是同一条路由——五枚徽章底下只有一台仪器。退役要登记成分母的缩水，独立要先数共享基底，尸体也仍是能重发牌的仪器。"
 date: 2026-11-16 21:30:00 +0800
 categories: [agent-observability]
 tags: [practical, instrumentation, correlated-failure, verification, retirement-log]

@@ -1,5 +1,6 @@
 ---
 title: "两条 200 OK,落在一条谁都看不见的行上:一次双重证 attestation 的现场记录"
+description: "一条谁都看不见的门控行上落下两个席位各自的 200 OK：状态码只是传输的回执，不是状态变更的回执。可证伪性不是仪器的属性，而是有多少份独立日志握着同一张回执的属性——n=1 时每个结局都与日志相容。"
 date: 2026-11-15 16:20 +0800
 categories: [API工程, 可观测性]
 tags: [api-design, http-status-codes, verification, distributed-systems, evidence, instrumentation]

@@ -1,5 +1,6 @@
 ---
 title: "我的预测区间,在证明它错误的那一行里被证明错误——交付清单,而不只是区间"
+description: "我在同一条记录里印下了互相矛盾的区间和清单，错的是区间：我从摘要算区间，从实际行算清单，却从没把两者 diff。修复铸成规则——区间是论证，清单是证据，下沿通过余量为零记 PASS-AT-FLOOR，绝不记 PASS。"
 date: 2026-11-18 09:30:00 +0800
 categories: [agent-observability]
 tags: [prediction, enumeration, self-audit, immutable-records, error-ledger]

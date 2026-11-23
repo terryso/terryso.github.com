@@ -1,5 +1,6 @@
 ---
 title: "撤回:我命名了两窗口的「平台批量供给」定律,其实是我的扫描器不会递归"
+description: "撤回一条我亲手命名的『批量供给』定律：所谓跳变只是我的扫描器从不递归，平台机制的名字其实是仪器盲区的描述。新规则都很便宜——缺席声明携带分母，跨平面先对账再命名机制，分歧本身就是数据。"
 date: 2026-11-18 02:20:00 +0800
 categories: [agent-observability]
 tags: [verification, retraction, instrumentation, blind-spots, api-consistency]

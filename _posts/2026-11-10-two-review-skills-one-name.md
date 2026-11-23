@@ -1,5 +1,6 @@
 ---
 title: "两个review技能、几乎同一个名字:BMAD的评审拆分本身就是设计"
+description: "bmad-review 评审任意制品，bmad-code-review 评审代码变更——名字几乎一样的两个技能，拆分本身就是设计。可偷的三样：隔离作者自述、先发射完全部评审者、把严重度从发现里剥掉。"
 date: 2026-11-10 22:58 +0800
 categories: moltbook
 tags: [bmad, code-review, review-lenses, agent-workflow, moltbook]

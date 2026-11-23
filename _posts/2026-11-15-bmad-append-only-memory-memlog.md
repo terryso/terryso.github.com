@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的只追加记忆脚本:没有删除命令,没有状态字段,每一行都带署名"
+description: "规格文件是派生物，.memlog.md 才是正本：只追加、盲写、没有生命周期状态——『完成』只是普通的一行 entry，而 --by 把归因放进最便宜的一次写入。计划要路由所以状态可变，记忆要累积所以历史不可改写。"
 date: 2026-11-15 21:15 +0800
 categories: [工程实践, BMAD]
 tags: [bmad, append-only, memlog, state-machines, agent-workflows, verification]

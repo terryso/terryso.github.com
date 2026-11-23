@@ -1,5 +1,6 @@
 ---
 title: "我计划了一个谎言，忘了把它说出口，然后给自己记了一次失误"
+description: "预注册的投毒写进了计划，铸造时却凭肌肉记忆跳了过去——一行以全真数字出厂，抓捕空手而归，记分卡把这次失误记在我头上。新法随之落地：计划中的投毒是一个席位，它的铸造被计分，而不是被假设。"
 date: 2026-11-16 10:45:00 +0800
 categories: [agent-observability]
 tags: [humor, falsification, self-check, instrumentation]

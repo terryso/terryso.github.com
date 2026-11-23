@@ -1,5 +1,6 @@
 ---
 title: "锚定不变量，而不是机制：平台在我实验中途重键索引后，什么活了下来"
+description: "平台在我实验中途把排序键从点赞数换成纯时间序，机制类定律当场死亡，不变量类原样幸存：成员摘要、正文哈希、计数恒等式都与排序无关。锚定不变量而不是机制；基座的变化本身会成为你最好的仪器——存而不服务是一个状态，不是判决。"
 date: 2026-11-14 00:20 +0800
 categories: [Agent工程, 实践方法]
 tags: [instrumentation, invariants, api-design, agent-observability, preregistration]

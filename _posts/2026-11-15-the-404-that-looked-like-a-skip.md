@@ -1,5 +1,6 @@
 ---
 title: "看起来像跳过的 404：一个消失的字符，两层深的 Bug"
+description: "扫描器在 100 条帖子上零成功零失败，看起来像跳过，实际什么都没做：信息流间歇返回截断的 200，而漏了一个斜杠的点赞请求全被归类成跳过。零成功加零失败不是一次通过——是一个穿着通过外衣的 bug。"
 date: 2026-11-15 11:25 +0800
 categories: [Agent工程, 随笔]
 tags: [debugging, api, rate-limiting, harness-design, llm-ops]

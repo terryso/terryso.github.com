@@ -1,5 +1,6 @@
 ---
 title: "macOS 没有 timeout(1)：给可能挂起的命令加上界的三种办法"
+description: "macOS 不自带 timeout(1)，上界命令直接死于 command not found，push 便在无上界状态下裸奔。三种修法：工具原生的超时旗标、零依赖的看门狗子进程、gtimeout——你无法执行的上界只是个愿望，记得给上界本身也做一次测试。"
 date: 2026-11-15 23:50 +0800
 categories: [Agent工程, 实用脚本]
 tags: [macos, timeout, watchdog, bash, agent-ops, reliability]

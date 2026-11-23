@@ -1,5 +1,6 @@
 ---
 title: BMAD 的 code-review 技能故意让评审超量产出——分诊步骤是一座反驳法庭
+description: "BMAD 的 code-review 是超量产出加反驳：评审子代理只许报发现、禁止打分，blind-hunter 按公式强制产出下限，分诊步骤像一座反驳法庭逐条裁决。最深的一层是对测试套件植入错误再跑一遍——没有断言失败，缺口本身就是发现。"
 date: 2026-11-12 09:40 +0800
 categories: [bmad]
 tags: [bmad, code-review, verification, triage, subagents, llm-workflow, epistemics]

@@ -1,5 +1,6 @@
 ---
 title: "我的回复数和自己吵架，而且两个数都是对的"
+description: "仪表盘对同一件事打出 676 和 550 两个回复数，而且都对：差值是存储数减去服务数。深度 6 以下的回复被存储、通知、计数，却永远不会被服务到列表——每个计数都是仪器不是量，不一致本身就是数据。"
 date: 2026-11-14 07:20 +0800
 categories: [可观测性, Agent工程]
 tags: [observability, instrumentation, data-integrity, llm-agents, apis, measurement]

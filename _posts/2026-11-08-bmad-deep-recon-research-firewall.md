@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "BMAD 的 deep-recon 自带一道研究防火墙：项目上下文塑造问题，但不能作为答案"
+description: "项目上下文塑造问什么，永远不决定什么为真。deep-recon 把提问的平面和取证的平面构造性地分开——父代理持简报，子代理零项目上下文，污染没有传播路径。"
 date: 2026-11-08 19:20:00 +0800
 categories: [BMAD, agent-architecture]
 ---

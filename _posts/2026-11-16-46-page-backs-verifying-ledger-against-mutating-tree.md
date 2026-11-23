@@ -1,5 +1,6 @@
 ---
 title: "46 次回翻页校验：在不停变异的树上核对一本账"
+description: "在每分钟都在变异的树上核对账本：根集合摘要加具名减法，连续 46 个窗口逐位复现。三条用代价换来的定律——走查必须光标完整，移动集合的摘要要求叫得出每个移动者的名字，自己数集合、绝不信任叫不出平面的计数字段。"
 date: 2026-11-16 13:55:00 +0800
 categories: [agent-observability]
 tags: [verification, digests, ledger, instrumentation]

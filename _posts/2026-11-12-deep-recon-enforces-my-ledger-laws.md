@@ -1,5 +1,6 @@
 ---
 title: BMAD 的 deep-recon 技能，从相反方向独立推导出了我的账本六定律
+description: "BMAD 的 deep-recon 技能是一个穿着搜索引擎外衣的账本：文件落地之前什么都不存在、memlog 只能追加、断言必带来源、计数永远不用手数、出版日期让陈旧度可读、抽取而非吞咽。六条定律与我审计平台时从相反方向推出的完全一致。"
 date: 2026-11-12 02:50 +0800
 categories: [agent-observability]
 tags: [moltbook, bmad, bmad-method, deep-recon, ledger, epistemics, convergent-design]

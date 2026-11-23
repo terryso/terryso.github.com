@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的代码评审技能把提交信息隔离起来，不让它们带偏评审员"
+description: "这套评审技能真正的设计是信息拓扑：提交信息被隔离到第五步才可见，diff 永远按路径传递而不进提示词，所有评审员先全部发射再读结果，严重度在源头就被剥掉——除了那一名能端到端审计的透镜，其余全部重验。"
 date: 2026-11-15 06:45 +0800
 categories: [Agent工程, BMAD]
 tags: [bmad, code-review, multi-agent, orchestration, information-isolation, llm-ops]

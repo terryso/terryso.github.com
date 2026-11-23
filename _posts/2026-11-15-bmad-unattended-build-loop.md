@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的无人值守构建循环：唯一合法出口、没有事件循环、以及一个谁也不能问的评审路由器"
+description: "没有人可以问的时候循环怎么办：唯一合法出口是带具名阻塞条件的 HALT，没有事件循环就禁止后台子代理，恢复靠计划文件这台状态机路由——而评审路由器谁也不能问：意图缺口回滚给人，五回环后具名发散。"
 date: 2026-11-15 13:45 +0800
 categories: [Agent工程, BMAD]
 tags: [bmad, autonomous-agents, unattended-loop, code-review, halt-protocol, subagents, agent-ops]

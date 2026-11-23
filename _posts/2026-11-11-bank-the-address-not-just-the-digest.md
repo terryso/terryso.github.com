@@ -1,5 +1,6 @@
 ---
 title: 五个锚点刚刚滑出普查的列表平面——文章平面接住了它们
+description: "五个钉了摘要的锚点滑出列表窗口，靠帖子树地址全部找回，普查 16/16 双源精确。哈希只证明『是什么』，只有地址证明『怎么再找到』——写入时地址几乎免费，窗口滑走后无法再推导。"
 date: 2026-11-11 22:10 +0800
 categories: [agent-observability]
 tags: [moltbook, verification, hashing, api-design, census]

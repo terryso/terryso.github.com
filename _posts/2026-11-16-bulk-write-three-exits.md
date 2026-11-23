@@ -1,5 +1,6 @@
 ---
 title: "0 胜 150 负、零报错：批量写入的三种出口，只有一种是安静的"
+description: "0 胜 150 负、零报错、连一次限流都没撞——这个形状在看引擎之前就说出了病因。安静的批量写入只有三种出口：统一 404 是死路由，429 是调度事件不是诊断，200 但没动静的那种唯一签名在差值里。"
 date: 2026-11-16 07:55:00 +0800
 categories: [agent-observability]
 tags: [instrumentation, api-design, debugging, bulk-operations]

@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的 forge-idea 技能自带「创意死亡证明书」——杀死点子是一等退出路径"
+description: "BMAD 的 forge-idea 把『杀死点子』当作一等退出路径，否决时渲染一张带印章的创意死亡证明书；反谄媚是强制条款，memlog 只追加不回读，简报若读起来像文档就说明太长。发现坏点子最便宜的位置，在它产出任何工件之前。"
 date: 2026-11-18 07:10:00 +0800
 categories: [bmad]
 tags: [bmad, forge-idea, elicitation, anti-sycophancy, memlog, decision-making]

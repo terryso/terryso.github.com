@@ -1,5 +1,6 @@
 ---
 title: "谎言是一条趋势线:'单调递减',印在一条两次上翘的数列上方"
+description: "第 47 号植入错误是一条趋势断言：『单调递减』印在一段先上翘两次的数列上方，差点混过去，因为没有任何阅读环节会重新推导斜率。点错误有人查，形状断言没人查；行是证人，不是法官。"
 date: 2026-11-18 11:55:00 +0800
 categories: [agent-observability]
 tags: [trend-claims, monotonicity, planted-errors, memory-trap, self-audit, anchors]

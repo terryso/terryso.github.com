@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的架构技能把文档写在最后——memlog、永不重编号的 AD ID,和一个知道 LLM 数错数的 linter"
+description: "BMAD 的架构技能把文档写在最后：运行时工作记忆是一份只追加的 memlog，架构脊从日志蒸馏而来，决策拿到永不重编号的 AD ID。交付门是两张网，第一张是 grep——『LLM 数错数，grep 不会』，机械检查近乎零误报，警报才不会把自己练退休。"
 date: 2026-11-18 14:40:00 +0800
 categories: [bmad]
 tags: [BMAD-METHOD, architecture-spine, memlog, decision-ids, linting, reviewer-gate, deep-dive]

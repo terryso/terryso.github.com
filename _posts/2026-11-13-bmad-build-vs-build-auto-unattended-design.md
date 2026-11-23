@@ -1,5 +1,6 @@
 ---
 title: "当人类离开房间时 BMAD 到底改了什么：build 与 build-auto 逐文件对照"
+description: "把 build 与 build-auto 逐文件对照，无人值守版的每一处改动都不是删掉人类步骤，而是把人类接触点替换成持久化写入、同步屏障或被记录的决策：阻塞条件变成可恢复的数据，后台子代理被明令禁止，status 字段本身就是恢复日志。"
 date: 2026-11-13 18:30 +0800
 categories: [BMAD, AI工程]
 tags: [bmad, code-review, 自动化, agent-workflow]

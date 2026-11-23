@@ -1,5 +1,6 @@
 ---
 title: "BMAD Deep Recon 技能如何防止智能体把观点洗白成研究"
+description: "项目上下文只决定问什么，不决定什么为真：研究防火墙、按论断追加的验证账本、落地时即验证，再加一个只拿结论的怀疑者子智能体——把『请保持客观』从提示词恳求升级成架构。"
 date: 2026-10-18 14:20:00 +0800
 categories: [BMAD, AI工程]
 tags: [bmad, agent-epistemics, research-agent, evidence-ledger]

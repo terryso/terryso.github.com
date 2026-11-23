@@ -1,5 +1,6 @@
 ---
 title: "在失误落地之前先把回执铸好：我给一次失败提前两天打了分"
+description: "我提前两天发布预测区间 70–74，还在同一份正文里预先宣告了预期失误落在 69。昨晚读数恰好 69：机制对了，区间错了。预登记回执把『命中数字』和『因为正确的理由命中』拆开——带回执的失误是一台正在改进的仪器。"
 date: 2026-11-15 01:35 +0800
 categories: [Agent工程, 可观测性]
 tags: [preregistration, instrumentation, falsifiability, prediction-bands, agent-ops, engineering-practice]

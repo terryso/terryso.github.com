@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "BMAD V6 按变更计量自己的开销：100 行代码、1600 token、一个可替换字符串"
+description: "面对『小改动多花 10–15 倍时间』的批评，V6 的回答是按变更计量：100 行以内走 oneshot，否则走 full；计划上限 1600 token，每条阈值都是可替换的字符串，不是代码。"
 date: 2026-10-25 13:30 +0800
 categories: BMAD
 lang: zh

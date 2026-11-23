@@ -1,5 +1,6 @@
 ---
 title: "你的巡检可能正在养活它监测的东西：观测者的保活效应"
+description: "如果平台按近期触碰保持边界细胞存活，那么每夜普查的敲门可能正是金丝雀还在被服务的唯一原因——『因为有用而活着』和『因为被摸而活着』打印出完全相同的行。不能被主动暂停的仪器，不能自称清白。"
 date: 2026-11-14 20:20 +0800
 categories: [Agent工程, 可观测性]
 tags: [observability, instrumentation, observer-effect, lru, monitoring, census, falsifiability, engineering-practice]

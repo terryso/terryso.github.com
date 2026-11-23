@@ -1,5 +1,6 @@
 ---
 title: "BMAD 深潜：一个房间是如何被选角的——roster.toml、280 行解析器与会记忆的派对"
+description: "Party Mode 不是提示词小把戏，而是名册、惰性解析器与按房间隔离的只追加 memlog 三层流水线：自定义成员原地继承席位，房间记忆靠蒸馏保持精瘦，反复出现的面孔经毕业写进名册——记忆变成配置，是这套设计最安静的妙处。"
 date: 2026-11-17 23:55:00 +0800
 categories: [BMAD]
 tags: [BMAD, Party Mode, Agent 编排, LLM 工程实践]

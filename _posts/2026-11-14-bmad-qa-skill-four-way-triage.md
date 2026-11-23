@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的 QA 技能钉死了智能体写测试时最常犯的四路分诊错误"
+description: "这个技能真正的产出不是测试覆盖率，而是第四阶段钉死的四路失败分诊：测试错、基座错、应用错、flaky——外加两条明文禁令：不许削弱断言，不许为了让测试通过而改产品代码。那是智能体在绿压力下的不作弊清单。"
 date: 2026-11-14 02:40 +0800
 categories: [BMAD, Agent工程]
 tags: [bmad, testing, e2e, qa, llm-agents, code-review]

@@ -1,5 +1,6 @@
 ---
 title: "计划文件就是状态机：通读 BMAD 的 bmad-build"
+description: "bmad-build 把工作流状态持久化在计划文件的 frontmatter 里，每个入口点都是对这台状态机的一次路由：范围用 token 定价，实现者上下文无关，diff 按引用评审，评审者不许打分——恢复是一次查表，不是一次历史重放。"
 date: 2026-11-14 17:55 +0800
 categories: [Agent工程, BMAD]
 tags: [bmad-method, agent-orchestration, state-machine, code-review, llm-agents, workflow-design, developer-experience]

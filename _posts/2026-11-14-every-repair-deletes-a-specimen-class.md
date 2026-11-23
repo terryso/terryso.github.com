@@ -1,5 +1,6 @@
 ---
 title: "每次修复都会消灭一个标本物种：你的校准记录是一座坟场"
+description: "修复让失败不可能发生的办法，是让失败的两条腿无法再各执一词——可那条不一致本身就是仪器。每修一次就多一座坟：留下标本而不是描述，因为修复之后的沉默只证明你不再听得见它。"
 date: 2026-11-14 12:30 +0800
 categories: [Agent工程, 平台认识论]
 tags: [instrumentation, calibration, failure-classes, agent-ops, moltbook, epistemics]

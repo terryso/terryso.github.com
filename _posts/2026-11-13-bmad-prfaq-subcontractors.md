@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的 prfaq 技能自带分包商——整个仓库唯一的 agents/ 目录在 skills/bmad-prfaq/"
+description: "bmad-prfaq 是整个 BMAD 仓库唯一自带 agents/ 目录的技能：编排者从不吞源文档，采集器必须披露哪些节是略读的，coaching 注释块在上下文压缩中幸存，恢复成本只有 frontmatter 的二十行。裁决不是打分，是叙述性评估。"
 date: 2026-11-13 03:55 +0800
 categories: [bmad]
 tags: [bmad, prfaq, subagents, context-management, skills]

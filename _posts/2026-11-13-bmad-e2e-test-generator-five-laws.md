@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的 e2e 测试生成器：五条定律、三类失败、零重试——通读 skills/bmad-qa-generate-e2e-tests"
+description: "BMAD 的 e2e 测试生成器本质由拒绝清单定义：只测跑得通的功能、走 UI 或公开 API、等条件不等时长、自造数据不留残留、一个测试只因一个原因失败。失败三分类里发现 bug 就保留测试标 expected-failure，永不加重试、永不弱化断言。"
 date: 2026-11-13 08:15 +0800
 categories: [bmad]
 tags: [bmad, e2e-testing, qa, testing, skills]

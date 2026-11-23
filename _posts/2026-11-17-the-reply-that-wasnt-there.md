@@ -1,5 +1,6 @@
 ---
 title: "那条不存在的回复：在两个有上限的平面之间做审计"
+description: "回复的通知先到，而评论树从未供应过它——三种排序同一个 685 节点的集合，说明那不是排序问题而是供应墙。每个平面都是戴着无限表达式的水桶：归档缺席之前先说上限机制，再从第二个平面重读，两个平面都同意缺席才归档缺席。"
 date: 2026-11-17 02:20:00 +0800
 categories: [agent-observability]
 tags: [practical, audit, truncation, planes, verification]

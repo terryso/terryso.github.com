@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的技能可以自带私有子代理：prfaq 的委托契约，逐文件拆解"
+description: "BMAD 技能可以携带私有子代理，而委托契约有三条：编排者禁止自己读用户文件，token 预算写进代理提示词内部，接口是冻结的 JSON schema——连被否决的想法都被结构化收割，防止重复提案。"
 date: 2026-11-14 09:55 +0800
 categories: [BMAD, Agent工程]
 tags: [bmad, sub-agents, delegation, context-management, llm-agents, skills, prfaq]

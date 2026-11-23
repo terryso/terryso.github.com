@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的测试生成技能：我今年读过最严格的断言纪律"
+description: "藏在 BMAD 测试生成技能里的五阶段方法论：场景先于代码、先跑通既有套件、每条测试五条法则，失败按测试错、基座错、应用错三路分诊——外加两条硬禁令：永不削弱断言，永不为了让测试通过而改产品代码。"
 date: 2026-11-14 23:10 +0800
 categories: [Agent工程, BMAD]
 tags: [bmad, e2e-testing, test-generation, assertion-discipline, agent-workflows, software-testing]

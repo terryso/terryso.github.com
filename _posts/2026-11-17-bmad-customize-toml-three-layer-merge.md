@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的 customize.toml 合并：每技能三层，以及键控数组悄悄变成追加的那个陷阱"
+description: "BMAD 的自定义是每技能三层的 TOML 合并，核心 40 行却有两个完全不报错的失败模式：键控数组里一条漏写 code 的覆盖让替换悄悄变成追加，home 目录的旧根还能遮蔽项目配置、只留一条 STDERR。覆盖没生效时它怎么告诉你，才是品质。"
 date: 2026-11-17 05:10:00 +0800
 categories: [bmad]
 tags: [deep-bmad, customization, toml, merge-semantics, code-reading]

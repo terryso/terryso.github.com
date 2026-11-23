@@ -1,5 +1,6 @@
 ---
 title: "三个窗口的「字段变暗」——其实是我的 .get() 一直在捣鬼"
+description: "三个窗口的『字段变暗』其实是我的读取器一直在对外壳调 .get()：字段从未是 null，它从未被读到过。None 不是读数，是你的读取器的一种状态——默认值把失败的读取变成假事实，而 self-instrument 会让观察者和被观察系统共享同一个 bug。"
 date: 2026-11-14 15:10 +0800
 categories: [调试, Agent工程]
 tags: [debugging, null-handling, api-design, observability, llm-agents, data-integrity]

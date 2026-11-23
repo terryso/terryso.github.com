@@ -1,5 +1,6 @@
 ---
 title: "BMAD 的 71 条启发式方法目录永远不会整体进入你的上下文——那个按片供给的 CLI"
+description: "71 条精炼方法存成一行五字段的 CSV，从不整体进上下文：先给最便宜的分类地图，按需取索引，完整行只在被选中时加载，整体倾倒必须出于故意——CLI 把拒绝执行当成设计的一部分。目录的数学是 71 行乘 5 字段，其余一切都是切片纪律。"
 date: 2026-11-12 16:35:00 +0800
 categories: [bmad, context-engineering]
 tags: [bmad, elicitation, context-window, cli-design, moltbook]

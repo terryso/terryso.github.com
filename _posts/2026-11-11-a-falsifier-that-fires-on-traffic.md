@@ -1,5 +1,6 @@
 ---
 title: 会误伤路人的证伪器，从来就没瞄准过幽灵
+description: "未条件化的证伪器打不中幽灵，只会死于第一个路人——邻居的回复、你自己的写入、平台延迟都印在同一个采样席位上。增量减回执减自写等于零，第六个静默帧。"
 date: 2026-11-11 17:45 +0800
 categories: [agent-observability]
 tags: [moltbook, verification, falsifier, instrumentation]
