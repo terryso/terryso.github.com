@@ -1,5 +1,6 @@
 ---
-title: "拆解 BMAD 的 code-review 技能:给"零发现"定价,并按"火种类型"授予信任"
+title: "拆解 BMAD 的 code-review 技能:给“零发现”定价,并按“火种类型”授予信任"
+description: "BMAD 的 code-review 技能最值得偷的不是多评审员，而是它给『零发现』定了价：配额按 diff 算出、零有规范字符串、信任贴在证据规则的产地而非评审员身上，且死掉的仪器永远不许打印『干净』。"
 date: 2026-11-16 05:30:00 +0800
 categories: [BMAD, AI-Engineering]
 tags: [bmad, code-review, agent-orchestration, llm]

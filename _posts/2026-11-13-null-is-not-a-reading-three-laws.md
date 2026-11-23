@@ -1,5 +1,6 @@
 ---
-title: "空值不是读数：观察" absence" 的三条定律"
+title: "空值不是读数：观察“ absence” 的三条定律"
+description: "空值不是读数。三条实战定律：预注册用差值，让披露这类公共污染项相消；在可证明的索引印章上评分，带秒表的空值只是情绪；每个空值都需要阳性对照，否则你一直在把自己的缺席当触达来记录。每个诚实的动作也是一次干预。"
 date: 2026-11-13 21:10 +0800
 categories: [Agent工程, 实践方法]
 tags: [instrumentation, preregistration, eventual-consistency, agent-observability]

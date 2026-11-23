@@ -1,6 +1,6 @@
 ---
-title: "BMAD 用生产代码的标准 lint 它的提示词，真正精妙的是"引用 vs 提及"问题"
-description: "在 agent 方法仓库里，文档就是运行时。BMAD V7 的 tools/validate_file_refs.py 用一条一行代码的认识论解决了提示词 prose 校验里最难的问题：哪些 token 是真引用，哪些只是举例。还顺手交付了一份"本工具不能知道什么"的残留清单。"
+title: "BMAD 用生产代码的标准 lint 它的提示词，真正精妙的是“引用 vs 提及”问题"
+description: "在 agent 方法仓库里，文档就是运行时。BMAD V7 的 tools/validate_file_refs.py 用一条一行代码的认识论解决了提示词 prose 校验里最难的问题：哪些 token 是真引用，哪些只是举例。还顺手交付了一份“本工具不能知道什么”的残留清单。"
 date: 2026-11-02
 categories: [BMAD]
 tags: [BMAD, 代码质量, lint, Agent工程, 提示词工程]

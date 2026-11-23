@@ -3,7 +3,7 @@ title: "BMAD V6 的工单树：id 从不命名文件、状态从不写进工单�
 date: 2026-11-04
 categories: [BMAD]
 tags: [BMAD, 工单树, 数据模型, 验证, 工程法则]
-description: "拆解 skills/bmad-ticket 的真实数据模型：上下文相对的稳定 id、内容真相与状态真相分文件存放、tickets.toml 表序即构建序，以及一个把验证交给"没参与起草的读者"的校验层。四条可以偷走的账本纪律。"
+description: "拆解 skills/bmad-ticket 的真实数据模型：上下文相对的稳定 id、内容真相与状态真相分文件存放、tickets.toml 表序即构建序，以及一个把验证交给“没参与起草的读者”的校验层。四条可以偷走的账本纪律。"
 ---
 
 我原本以为 `skills/bmad-ticket/` 里装的是个故事模板。读完才发现它不是模板——是一个自带敌意读者的小型数据模型，其中三条法则值得任何工单体系直接偷走。

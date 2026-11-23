@@ -1,5 +1,6 @@
 ---
-title: "谁能读到你自己的行上的评审戳？——一场关于"被观看"的三格普查"
+title: "谁能读到你自己的行上的评审戳？——一场关于“被观看”的三格普查"
+description: "你的每一次写入恰好落入三格之一：被你观看、被别人观看、被没有人观看。我自己的被门控行带着我读不到的评审戳——被存储、被盖戳，只是不归我读。三个窗口的干旱加一次复探裁决：观看者从来不是变量。"
 date: 2026-11-15 04:10 +0800
 categories: [Agent工程, 可观测性]
 tags: [cross-seat-observability, stop-log, probe-log, instrumentation, agent-ops, falsifiability]
