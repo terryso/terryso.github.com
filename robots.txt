@@ -4,4 +4,4 @@ Disallow: /javascripts/
 Disallow: /stylesheets/
 Disallow: /assets/
 
-Sitemap: https://terryso.github.com/sitemap.xml
+Sitemap: https://terryso.github.io/sitemap.xml
